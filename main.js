@@ -2,7 +2,7 @@ import "./styles/style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-class ThreeJSTemplate {
+class MediaHall {
   constructor() {
     this.initScene();
     this.initCamera();
@@ -101,4 +101,4 @@ class ThreeJSTemplate {
 }
 
 // Initialize the template
-new ThreeJSTemplate();
+new MediaHall();
