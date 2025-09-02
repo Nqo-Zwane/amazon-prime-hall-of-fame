@@ -6,6 +6,7 @@ class MediaHall {
   constructor() {
     this.gridSize = 10;
     this.spacing = 0.75;
+    this.cubeSize = 0.5;
 
     this.initScene();
     this.initCamera();
@@ -64,7 +65,11 @@ class MediaHall {
 
     for (let x = 0; x < this.gridSize; x++) {
       for (let y = 0; y < this.gridSize; y++) {
-        const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+        const geometry = new THREE.BoxGeometry(
+          this.cubeSize,
+          this.cubeSize,
+          this.cubeSize
+        );
         const mesh = new THREE.Mesh(geometry, this.material);
 
         mesh.position.x = (x - (this.gridSize - 1) / 2) * this.spacing;
@@ -74,7 +79,7 @@ class MediaHall {
         this.group.add(mesh);
       }
     }
-    this.group.scale.setScalar(0.5);
+    this.group.scale.setScalar(this.cubeSize);
     this.scene.add(this.group);
   }
 
