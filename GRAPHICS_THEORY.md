@@ -254,7 +254,6 @@ Tone‑mapping operators each have trade‑offs in contrast, saturation, and hig
 ## Putting It All Together in Three.js
 
 1. **Textures & Color Spaces**
-
    - **Color textures** (diffus, emissive):
      ```jsx
      texture.colorSpace = THREE.SRGBColorSpace;

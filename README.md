@@ -19,7 +19,9 @@ npm run host
 # Build for production in the dist/ directory
 npm run build
 ```
+
 ## Credits
+
 - [Vite Bundler](https://vitejs.dev/)
 
 ## About This Project

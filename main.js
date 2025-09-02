@@ -1,9 +1,12 @@
-import "./styles/style.css";
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import './styles/style.css';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 class MediaHall {
   constructor() {
+    this.gridSize = 10;
+    this.spacing = 0.75;
+
     this.initScene();
     this.initCamera();
     this.initRenderer();
@@ -35,7 +38,7 @@ class MediaHall {
   }
 
   initRenderer() {
-    this.canvas = document.querySelector("canvas.webgl");
+    this.canvas = document.querySelector('canvas.webgl');
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
       alpha: true,
@@ -49,16 +52,30 @@ class MediaHall {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     const hemisphereLight = new THREE.HemisphereLight(0x7444ff, 0xff00bb, 0.5);
     const pointLight = new THREE.PointLight(0x7444ff, 1, 100);
+
     pointLight.position.set(0, 3, 4);
 
     this.scene.add(ambientLight, directionalLight, hemisphereLight, pointLight);
   }
 
   createGrid() {
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshStandardMaterial({ color: "#7444ff" });
-    this.mesh = new THREE.Mesh(geometry, material);
-    this.scene.add(this.mesh);
+    this.material = new THREE.MeshStandardMaterial({ color: 0xff0000 });
+    this.group = new THREE.Group();
+
+    for (let x = 0; x < this.gridSize; x++) {
+      for (let y = 0; y < this.gridSize; y++) {
+        const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+        const mesh = new THREE.Mesh(geometry, this.material);
+
+        mesh.position.x = (x - (this.gridSize - 1) / 2) * this.spacing;
+        mesh.position.y = (y - (this.gridSize - 1) / 2) * this.spacing;
+        mesh.position.z = 0;
+
+        this.group.add(mesh);
+      }
+    }
+    this.group.scale.setScalar(0.5);
+    this.scene.add(this.group);
   }
 
   initControls() {
@@ -67,7 +84,7 @@ class MediaHall {
   }
 
   addEventListeners() {
-    window.addEventListener("resize", () => this.onResize());
+    window.addEventListener('resize', () => this.onResize());
   }
 
   onResize() {
