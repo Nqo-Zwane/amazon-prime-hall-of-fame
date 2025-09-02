@@ -9,11 +9,15 @@
     "preview": "vite preview",
     "host": "vite --host",
     "test": "echo \"No tests specified\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.34.0",
+    "eslint": "^9.34.0",
     "husky": "^9.1.7",
     "vite": "^4.2.0"
   },
