@@ -8,7 +8,7 @@ class MediaHall {
     this.initCamera();
     this.initRenderer();
     this.initLights();
-    this.initMesh();
+    this.createGrid();
     this.initControls();
     this.addEventListeners();
     this.animate();
@@ -54,7 +54,7 @@ class MediaHall {
     this.scene.add(ambientLight, directionalLight, hemisphereLight, pointLight);
   }
 
-  initMesh() {
+  createGrid() {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshStandardMaterial({ color: "#7444ff" });
     this.mesh = new THREE.Mesh(geometry, material);
