@@ -101,10 +101,10 @@ class MediaHall {
   animate() {
     const elapsedTime = this.clock.getElapsedTime();
 
-    // Animate mesh
-    this.mesh.rotation.x = elapsedTime * 0.5;
-    this.mesh.rotation.y = elapsedTime * 0.5;
-    this.mesh.rotation.z = elapsedTime * 0.5;
+    // Animate group
+    this.group.rotation.x = elapsedTime * 0.5;
+    this.group.rotation.y = elapsedTime * 0.5;
+    this.group.rotation.z = elapsedTime * 0.5;
 
     // Update controls
     this.controls.update();
