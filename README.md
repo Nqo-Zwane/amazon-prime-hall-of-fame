@@ -36,4 +36,4 @@ The interactive experience highlights local productions, celebrates South Africa
 - Responsive design for desktop and mobile devices
 - Smooth animations and engaging visual effects
 
-### Made with 💜 by [SahilK-027](https://github.com/SahilK-027)
+### Made with 💜 by [Manqoba](https://github.com/Nqo-Zwane)
