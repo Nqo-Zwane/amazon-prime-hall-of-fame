@@ -2,6 +2,10 @@ import './styles/style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
+// Video source configuration
+const VIDEO_SRC =
+  'https://mediahalloffame.s3.eu-north-1.amazonaws.com/Zwanes+Family+North+Ulindi+-+2025+July+16.mp4';
+
 class MediaHall {
   constructor() {
     this.gridSize = 10;
@@ -85,8 +89,7 @@ class MediaHall {
 
   createVideoTexture() {
     this.video = document.createElement('video');
-    this.video.src =
-      'https://mediahalloffame.s3.eu-north-1.amazonaws.com/Zwanes+Family+North+Ulindi+-+2025+July+16.mp4';
+    this.video.src = VIDEO_SRC;
     this.video.crossOrigin = 'anonymous';
     this.video.loop = true;
     this.video.muted = true;
