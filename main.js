@@ -97,10 +97,12 @@ class MediaHall {
 
     // Create video texture
     this.videoTexture = new THREE.VideoTexture(this.video);
-    this.videoTexture.minFilter = THREE.LinearFilter;
+    this.videoTexture.minFilter = THREE.LinearMipmapLinearFilter;
     this.videoTexture.magFilter = THREE.LinearFilter;
     this.videoTexture.anisotropy =
       this.renderer.capabilities.getMaxAnisotropy();
+    this.videoTexture.generateMipmaps = true;
+    this.videoTexture.flipY = false;
     this.videoTexture.colorSpace = THREE.SRGBColorSpace;
     this.videoTexture.wrapS = THREE.ClampToEdgeWrap;
     this.videoTexture.wrapT = THREE.ClampToEdgeWrap;
