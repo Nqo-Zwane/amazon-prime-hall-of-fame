@@ -85,7 +85,8 @@ class MediaHall {
 
   createVideoTexture() {
     this.video = document.createElement('video');
-    this.video.src = 'https://youtu.be/v7opbracFCk';
+    this.video.src =
+      'https://mediahalloffame.s3.eu-north-1.amazonaws.com/Zwanes+Family+North+Ulindi+-+2025+July+16.mp4';
     this.video.crossOrigin = 'anonymous';
     this.video.loop = true;
     this.video.muted = true;
