@@ -60,7 +60,7 @@ class MediaHall {
   }
 
   createGrid() {
-    this.material = new THREE.MeshStandardMaterial({ color: 0xff0000 });
+    this.createVideoTexture();
     this.group = new THREE.Group();
 
     for (let x = 0; x < this.gridSize; x++) {
@@ -81,6 +81,29 @@ class MediaHall {
     }
     this.group.scale.setScalar(this.cubeSize);
     this.scene.add(this.group);
+  }
+
+  createVideoTexture() {
+    this.video = document.createElement('video');
+    this.video.src = 'https://youtu.be/v7opbracFCk';
+    this.video.crossOrigin = 'anonymous';
+    this.video.loop = true;
+    this.video.muted = true;
+    this.video.play();
+
+    // Create video texture
+    this.videoTexture = new THREE.VideoTexture(this.video);
+    this.videoTexture.minFilter = THREE.LinearFilter;
+    this.videoTexture.magFilter = THREE.LinearFilter;
+    this.videoTexture.colorSpace = THREE.SRGBColorSpace;
+    this.videoTexture.wrapS = THREE.ClampToEdgeWrap;
+    this.videoTexture.wrapT = THREE.ClampToEdgeWrap;
+
+    // Create material with video texture
+    this.material = new THREE.MeshBasicMaterial({
+      map: this.videoTexture,
+      side: THREE.FrontSide,
+    });
   }
 
   initControls() {
