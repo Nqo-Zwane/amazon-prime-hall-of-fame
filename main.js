@@ -74,6 +74,29 @@ class MediaHall {
           this.cubeSize,
           this.cubeSize
         );
+
+        // Create individual geometry for each box to have unique UV mapping
+        // Calculate UV coordinates for this specific box
+        const uvX = x / this.gridSize;
+        const uvY = y / this.gridSize;
+        const uvWidth = 1 / this.gridSize;
+        const uvHeight = 1 / this.gridSize;
+
+        // Get the UV attribute
+        const uvAttribute = geometry.attributes.uv;
+        const uvArray = uvAttribute.array;
+
+        // Map each face of the box to show the same portion of video
+        // We'll focus on the front face (face 4) for the main projection
+        for (let i = 0; i < uvArray.length; i += 2) {
+          // Map all faces to the same UV region for consistency
+          uvArray[i] = uvX + uvArray[i] * uvWidth; // U coordinate
+          uvArray[i + 1] = uvY + uvArray[i + 1] * uvHeight; // V coordinate
+        }
+
+        // Mark the attribute as needing update
+        uvAttribute.needsUpdate = true;
+
         const mesh = new THREE.Mesh(geometry, this.material);
 
         mesh.position.x = (x - (this.gridSize - 1) / 2) * this.spacing;
@@ -135,13 +158,6 @@ class MediaHall {
   }
 
   animate() {
-    const elapsedTime = this.clock.getElapsedTime();
-
-    // Animate group
-    this.group.rotation.x = elapsedTime * 0.5;
-    this.group.rotation.y = elapsedTime * 0.5;
-    this.group.rotation.z = elapsedTime * 0.5;
-
     // Update controls
     this.controls.update();
 
