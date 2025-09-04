@@ -110,6 +110,8 @@ class MediaHall {
     this.scene.add(this.group);
   }
 
+  createMask() {}
+
   createVideoTexture() {
     this.video = document.createElement('video');
     this.video.src = VIDEO_SRC;
