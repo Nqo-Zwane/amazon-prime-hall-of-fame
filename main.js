@@ -113,6 +113,9 @@ class MediaHall {
   createMask() {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d'); // eslint-disable-line no-unused-vars
+    const maskImage = new Image(); // eslint-disable-line no-undef
+
+    maskImage.crossOrigin = 'anonymous';
   }
 
   createVideoTexture() {
