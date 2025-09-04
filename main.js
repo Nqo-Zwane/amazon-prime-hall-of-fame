@@ -116,6 +116,7 @@ class MediaHall {
     const maskImage = new Image(); // eslint-disable-line no-undef
 
     maskImage.crossOrigin = 'anonymous';
+    maskImage.onload = () => {};
   }
 
   createVideoTexture() {
