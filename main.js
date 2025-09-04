@@ -110,7 +110,10 @@ class MediaHall {
     this.scene.add(this.group);
   }
 
-  createMask() {}
+  createMask() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d'); // eslint-disable-line no-unused-vars
+  }
 
   createVideoTexture() {
     this.video = document.createElement('video');
