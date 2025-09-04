@@ -78,7 +78,7 @@ class MediaHall {
         // Create individual geometry for each box to have unique UV mapping
         // Calculate UV coordinates for this specific box
         const uvX = x / this.gridSize;
-        const uvY = y / this.gridSize;
+        const uvY = (this.gridSize - 1 - y) / this.gridSize; // Flip Y coordinate
         const uvWidth = 1 / this.gridSize;
         const uvHeight = 1 / this.gridSize;
 
@@ -91,7 +91,7 @@ class MediaHall {
         for (let i = 0; i < uvArray.length; i += 2) {
           // Map all faces to the same UV region for consistency
           uvArray[i] = uvX + uvArray[i] * uvWidth; // U coordinate
-          uvArray[i + 1] = uvY + uvArray[i + 1] * uvHeight; // V coordinate
+          uvArray[i + 1] = uvY + (1 - uvArray[i + 1]) * uvHeight; // V coordinate
         }
 
         // Mark the attribute as needing update
