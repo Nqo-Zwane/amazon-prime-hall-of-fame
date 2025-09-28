@@ -116,7 +116,24 @@ class MediaHall {
     const maskImage = new Image(); // eslint-disable-line no-undef
 
     maskImage.crossOrigin = 'anonymous';
-    maskImage.onload = () => {};
+    maskImage.onload = () => {
+      const originalWidth = maskImage.width;
+      const originalHeight = maskImage.height;
+      const aspectRatio = originalWidth / originalHeight;
+
+      this.gridWidth;
+      this.gridHeight;
+
+      if (aspectRatio > 1) {
+        // Image is wider than tall
+        this.gridWidth = this.gridSizeA;
+        this.gridHeight = Math.round(this.gridSize / aspectRatio);
+      } else {
+        // Image is taller than wide or square
+        this.gridHeight = this.gridSize;
+        this.gridWidth = Math.round(this.gridSize * aspectRatio);
+      }
+    };
   }
 
   createVideoTexture() {

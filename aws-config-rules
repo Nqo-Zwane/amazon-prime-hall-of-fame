@@ -1,0 +1,1138 @@
+{
+  "conversation_id": "a00694ad-b87c-4d30-8f00-7cbed547542a",
+  "next_message": null,
+  "history": [
+    {
+      "user": {
+        "additional_context": "",
+        "env_context": {
+          "env_state": {
+            "operating_system": "linux",
+            "current_working_directory": "/home/manqoba/threejs-experiments/amazon-prime-hall-of-fame",
+            "environment_variables": []
+          }
+        },
+        "content": {
+          "Prompt": {
+            "prompt": "Please check the commit history for this project"
+          }
+        },
+        "timestamp": "2025-09-28T16:43:51.365421174+02:00",
+        "images": null
+      },
+      "assistant": {
+        "ToolUse": {
+          "message_id": "02a7cf1d-f019-4ae2-a3ae-525321f07de8",
+          "content": "I'll check the commit history for your Amazon Prime Hall of Fame project.",
+          "tool_uses": [
+            {
+              "id": "tooluse_aYpPQe0PRpOboRSGVI96nQ",
+              "name": "execute_bash",
+              "orig_name": "execute_bash",
+              "args": {
+                "command": "git log --oneline -10",
+                "summary": "Check the recent commit history for the project"
+              },
+              "orig_args": {
+                "command": "git log --oneline -10",
+                "summary": "Check the recent commit history for the project"
+              }
+            }
+          ]
+        }
+      },
+      "request_metadata": {
+        "request_id": "5de4e991-79e6-4e09-8766-d0a7b69cf509",
+        "message_id": "02a7cf1d-f019-4ae2-a3ae-525321f07de8",
+        "request_start_timestamp_ms": 1759070631375,
+        "stream_end_timestamp_ms": 1759070637562,
+        "time_to_first_chunk": {
+          "secs": 3,
+          "nanos": 553173373
+        },
+        "time_between_chunks": [
+          {
+            "secs": 0,
+            "nanos": 181992
+          },
+          {
+            "secs": 0,
+            "nanos": 13850
+          },
+          {
+            "secs": 0,
+            "nanos": 260730763
+          },
+          {
+            "secs": 0,
+            "nanos": 941608854
+          },
+          {
+            "secs": 0,
+            "nanos": 379539567
+          },
+          {
+            "secs": 0,
+            "nanos": 99639
+          },
+          {
+            "secs": 0,
+            "nanos": 21013
+          },
+          {
+            "secs": 0,
+            "nanos": 9519
+          },
+          {
+            "secs": 0,
+            "nanos": 74589
+          },
+          {
+            "secs": 0,
+            "nanos": 9204
+          },
+          {
+            "secs": 0,
+            "nanos": 10246
+          },
+          {
+            "secs": 0,
+            "nanos": 823246097
+          },
+          {
+            "secs": 0,
+            "nanos": 232503
+          },
+          {
+            "secs": 0,
+            "nanos": 227453490
+          },
+          {
+            "secs": 0,
+            "nanos": 127165
+          },
+          {
+            "secs": 0,
+            "nanos": 19635
+          },
+          {
+            "secs": 0,
+            "nanos": 10148
+          },
+          {
+            "secs": 0,
+            "nanos": 8651
+          },
+          {
+            "secs": 0,
+            "nanos": 8737
+          },
+          {
+            "secs": 0,
+            "nanos": 8564
+          },
+          {
+            "secs": 0,
+            "nanos": 19179
+          },
+          {
+            "secs": 0,
+            "nanos": 166435
+          },
+          {
+            "secs": 0,
+            "nanos": 249012
+          },
+          {
+            "secs": 0,
+            "nanos": 44729
+          },
+          {
+            "secs": 0,
+            "nanos": 112316
+          },
+          {
+            "secs": 0,
+            "nanos": 196
+          }
+        ],
+        "user_prompt_length": 206,
+        "response_size": 171,
+        "chat_conversation_type": "ToolUse",
+        "tool_use_ids_and_names": [
+          [
+            "tooluse_aYpPQe0PRpOboRSGVI96nQ",
+            "execute_bash"
+          ]
+        ],
+        "model_id": "claude-sonnet-4",
+        "message_meta_tags": []
+      }
+    },
+    {
+      "user": {
+        "additional_context": "",
+        "env_context": {
+          "env_state": {
+            "operating_system": "linux",
+            "current_working_directory": "/home/manqoba/threejs-experiments/amazon-prime-hall-of-fame",
+            "environment_variables": []
+          }
+        },
+        "content": {
+          "ToolUseResults": {
+            "tool_use_results": [
+              {
+                "tool_use_id": "tooluse_aYpPQe0PRpOboRSGVI96nQ",
+                "content": [
+                  {
+                    "Json": {
+                      "exit_status": "0",
+                      "stdout": "4705bfa feat: add maskImage onload event handler\n01c3d00 feat: add mask image creation with CORS support to createMask function\n4dddaad feat: add canvas and 2D context to createMask function\n8388768 feat: add empty createMask() function to MediaHall class\nff1f6eb fix: correct video texture mapping on grid lattice\n85a5c6b feat: update main.js and gitignore\nb7e70c6 fix: remove AWS CLI zip file from repository\nba0c4d8 feat: add AWS deployment configuration and update main.js\n5616273 feat: add anisotropy to video texture for improved quality\n75e6dd2 refactor: extract video source URL to top-level variable",
+                      "stderr": ""
+                    }
+                  }
+                ],
+                "status": "Success"
+              }
+            ]
+          }
+        },
+        "timestamp": null,
+        "images": null
+      },
+      "assistant": {
+        "Response": {
+          "message_id": "b6a66bf7-f97e-4084-a463-de38a8f14639",
+          "content": "Here's the recent commit history for your Amazon Prime Hall of Fame project:\n\n- **4705bfa** - feat: add maskImage onload event handler\n- **01c3d00** - feat: add mask image creation with CORS support to createMask function  \n- **4dddaad** - feat: add canvas and 2D context to createMask function\n- **8388768** - feat: add empty createMask() function to MediaHall class\n- **ff1f6eb** - fix: correct video texture mapping on grid lattice\n- **85a5c6b** - feat: update main.js and gitignore\n- **b7e70c6** - fix: remove AWS CLI zip file from repository\n- **ba0c4d8** - feat: add AWS deployment configuration and update main.js\n- **5616273** - feat: add anisotropy to video texture for improved quality\n- **75e6dd2** - refactor: extract video source URL to top-level variable\n\nThe recent commits show you've been working on mask image functionality, video texture improvements, and AWS deployment setup. Would you like me to show more details about any specific commit or check the full commit history?"
+        }
+      },
+      "request_metadata": {
+        "request_id": "fbfa9cf6-90bf-45bf-9d33-d0f654b392c7",
+        "message_id": "b6a66bf7-f97e-4084-a463-de38a8f14639",
+        "request_start_timestamp_ms": 1759070641052,
+        "stream_end_timestamp_ms": 1759070646160,
+        "time_to_first_chunk": {
+          "secs": 2,
+          "nanos": 85829954
+        },
+        "time_between_chunks": [
+          {
+            "secs": 0,
+            "nanos": 39790
+          },
+          {
+            "secs": 0,
+            "nanos": 14956
+          },
+          {
+            "secs": 0,
+            "nanos": 5796
+          },
+          {
+            "secs": 0,
+            "nanos": 4244
+          },
+          {
+            "secs": 0,
+            "nanos": 10550
+          },
+          {
+            "secs": 0,
+            "nanos": 2344
+          },
+          {
+            "secs": 0,
+            "nanos": 4429
+          },
+          {
+            "secs": 0,
+            "nanos": 8683
+          },
+          {
+            "secs": 0,
+            "nanos": 4591
+          },
+          {
+            "secs": 0,
+            "nanos": 24432
+          },
+          {
+            "secs": 0,
+            "nanos": 1448711
+          },
+          {
+            "secs": 0,
+            "nanos": 7049747
+          },
+          {
+            "secs": 0,
+            "nanos": 70464
+          },
+          {
+            "secs": 0,
+            "nanos": 1130207
+          },
+          {
+            "secs": 0,
+            "nanos": 58525
+          },
+          {
+            "secs": 0,
+            "nanos": 10626
+          },
+          {
+            "secs": 0,
+            "nanos": 5341
+          },
+          {
+            "secs": 0,
+            "nanos": 4538
+          },
+          {
+            "secs": 0,
+            "nanos": 4450
+          },
+          {
+            "secs": 0,
+            "nanos": 56778
+          },
+          {
+            "secs": 0,
+            "nanos": 22598
+          },
+          {
+            "secs": 0,
+            "nanos": 20850
+          },
+          {
+            "secs": 0,
+            "nanos": 34765
+          },
+          {
+            "secs": 0,
+            "nanos": 142510396
+          },
+          {
+            "secs": 0,
+            "nanos": 62204
+          },
+          {
+            "secs": 0,
+            "nanos": 36089
+          },
+          {
+            "secs": 0,
+            "nanos": 40030
+          },
+          {
+            "secs": 0,
+            "nanos": 37837
+          },
+          {
+            "secs": 0,
+            "nanos": 39660
+          },
+          {
+            "secs": 0,
+            "nanos": 19027
+          },
+          {
+            "secs": 0,
+            "nanos": 41484
+          },
+          {
+            "secs": 0,
+            "nanos": 38163
+          },
+          {
+            "secs": 0,
+            "nanos": 38152
+          },
+          {
+            "secs": 0,
+            "nanos": 44784
+          },
+          {
+            "secs": 0,
+            "nanos": 72787
+          },
+          {
+            "secs": 0,
+            "nanos": 38304
+          },
+          {
+            "secs": 0,
+            "nanos": 51937
+          },
+          {
+            "secs": 0,
+            "nanos": 38000
+          },
+          {
+            "secs": 0,
+            "nanos": 35036
+          },
+          {
+            "secs": 0,
+            "nanos": 37978
+          },
+          {
+            "secs": 0,
+            "nanos": 39834
+          },
+          {
+            "secs": 0,
+            "nanos": 3451
+          },
+          {
+            "secs": 0,
+            "nanos": 50312
+          },
+          {
+            "secs": 0,
+            "nanos": 271776
+          },
+          {
+            "secs": 0,
+            "nanos": 36299
+          },
+          {
+            "secs": 0,
+            "nanos": 47683
+          },
+          {
+            "secs": 0,
+            "nanos": 74682
+          },
+          {
+            "secs": 0,
+            "nanos": 38038
+          },
+          {
+            "secs": 0,
+            "nanos": 39074
+          },
+          {
+            "secs": 0,
+            "nanos": 36498
+          },
+          {
+            "secs": 0,
+            "nanos": 38268
+          },
+          {
+            "secs": 0,
+            "nanos": 36865
+          },
+          {
+            "secs": 0,
+            "nanos": 44028
+          },
+          {
+            "secs": 0,
+            "nanos": 44143
+          },
+          {
+            "secs": 0,
+            "nanos": 39147
+          },
+          {
+            "secs": 0,
+            "nanos": 38792
+          },
+          {
+            "secs": 0,
+            "nanos": 39892
+          },
+          {
+            "secs": 0,
+            "nanos": 47045
+          },
+          {
+            "secs": 0,
+            "nanos": 38267
+          },
+          {
+            "secs": 0,
+            "nanos": 39651
+          },
+          {
+            "secs": 0,
+            "nanos": 88088
+          },
+          {
+            "secs": 0,
+            "nanos": 34749
+          },
+          {
+            "secs": 0,
+            "nanos": 38488
+          },
+          {
+            "secs": 0,
+            "nanos": 68744
+          },
+          {
+            "secs": 0,
+            "nanos": 41901
+          },
+          {
+            "secs": 0,
+            "nanos": 46782
+          },
+          {
+            "secs": 0,
+            "nanos": 52710
+          },
+          {
+            "secs": 0,
+            "nanos": 36843
+          },
+          {
+            "secs": 0,
+            "nanos": 64901
+          },
+          {
+            "secs": 0,
+            "nanos": 35451
+          },
+          {
+            "secs": 0,
+            "nanos": 35985
+          },
+          {
+            "secs": 0,
+            "nanos": 38090
+          },
+          {
+            "secs": 0,
+            "nanos": 67833
+          },
+          {
+            "secs": 0,
+            "nanos": 46793
+          },
+          {
+            "secs": 0,
+            "nanos": 38446
+          },
+          {
+            "secs": 0,
+            "nanos": 43514
+          },
+          {
+            "secs": 0,
+            "nanos": 38666
+          },
+          {
+            "secs": 0,
+            "nanos": 40876
+          },
+          {
+            "secs": 0,
+            "nanos": 46092
+          },
+          {
+            "secs": 0,
+            "nanos": 36665
+          },
+          {
+            "secs": 0,
+            "nanos": 34131
+          },
+          {
+            "secs": 0,
+            "nanos": 42593
+          },
+          {
+            "secs": 0,
+            "nanos": 44510
+          },
+          {
+            "secs": 0,
+            "nanos": 42760
+          },
+          {
+            "secs": 0,
+            "nanos": 33785
+          },
+          {
+            "secs": 0,
+            "nanos": 36257
+          },
+          {
+            "secs": 0,
+            "nanos": 15657
+          },
+          {
+            "secs": 0,
+            "nanos": 1707
+          },
+          {
+            "secs": 0,
+            "nanos": 167
+          }
+        ],
+        "user_prompt_length": 0,
+        "response_size": 995,
+        "chat_conversation_type": "NotToolUse",
+        "tool_use_ids_and_names": [],
+        "model_id": "claude-sonnet-4",
+        "message_meta_tags": []
+      }
+    },
+    {
+      "user": {
+        "additional_context": "",
+        "env_context": {
+          "env_state": {
+            "operating_system": "linux",
+            "current_working_directory": "/home/manqoba/threejs-experiments/amazon-prime-hall-of-fame",
+            "environment_variables": []
+          }
+        },
+        "content": {
+          "Prompt": {
+            "prompt": "How do I save the chat ?"
+          }
+        },
+        "timestamp": "2025-09-28T16:45:22.850668383+02:00",
+        "images": null
+      },
+      "assistant": {
+        "ToolUse": {
+          "message_id": "9f32ffb6-a5f3-444f-9c49-192c562c5c7d",
+          "content": "",
+          "tool_uses": [
+            {
+              "id": "tooluse_5hlzczs8Smyiks0bH_PHVA",
+              "name": "introspect",
+              "orig_name": "introspect",
+              "args": {
+                "query": "How do I save the chat?"
+              },
+              "orig_args": {
+                "query": "How do I save the chat?"
+              }
+            }
+          ]
+        }
+      },
+      "request_metadata": {
+        "request_id": "2a8fceaa-7af3-46a0-a0d0-342d01088028",
+        "message_id": "9f32ffb6-a5f3-444f-9c49-192c562c5c7d",
+        "request_start_timestamp_ms": 1759070722852,
+        "stream_end_timestamp_ms": 1759070725792,
+        "time_to_first_chunk": {
+          "secs": 2,
+          "nanos": 932526695
+        },
+        "time_between_chunks": [
+          {
+            "secs": 0,
+            "nanos": 194688
+          },
+          {
+            "secs": 0,
+            "nanos": 19233
+          },
+          {
+            "secs": 0,
+            "nanos": 40507
+          },
+          {
+            "secs": 0,
+            "nanos": 54725
+          },
+          {
+            "secs": 0,
+            "nanos": 11733
+          },
+          {
+            "secs": 0,
+            "nanos": 62226
+          },
+          {
+            "secs": 0,
+            "nanos": 10192
+          },
+          {
+            "secs": 0,
+            "nanos": 6160443
+          },
+          {
+            "secs": 0,
+            "nanos": 100041
+          },
+          {
+            "secs": 0,
+            "nanos": 641013
+          },
+          {
+            "secs": 0,
+            "nanos": 239
+          }
+        ],
+        "user_prompt_length": 182,
+        "response_size": 36,
+        "chat_conversation_type": "ToolUse",
+        "tool_use_ids_and_names": [
+          [
+            "tooluse_5hlzczs8Smyiks0bH_PHVA",
+            "introspect"
+          ]
+        ],
+        "model_id": "claude-sonnet-4",
+        "message_meta_tags": []
+      }
+    },
+    {
+      "user": {
+        "additional_context": "",
+        "env_context": {
+          "env_state": {
+            "operating_system": "linux",
+            "current_working_directory": "/home/manqoba/threejs-experiments/amazon-prime-hall-of-fame",
+            "environment_variables": []
+          }
+        },
+        "content": {
+          "ToolUseResults": {
+            "tool_use_results": [
+              {
+                "tool_use_id": "tooluse_5hlzczs8Smyiks0bH_PHVA",
+                "content": [
+                  {
+                    "Json": {
+                      "built_in_help": "q (Amazon Q Chat)\n\nUsage: chat_cli <COMMAND>\n\nCommands:\n  quit        Quit the application\n  clear       Clear the conversation history\n  agent       Manage agents\n  context     Manage context files for the chat session\n  editor      Open $EDITOR (defaults to vi) to compose a prompt\n  compact     Summarize the conversation to free up context space\n  tools       View tools and permissions\n  issue       Create a new Github issue or make a feature request\n  changelog   View changelog for Amazon Q CLI\n  prompts     View and retrieve prompts\n  hooks       View context hooks\n  usage       Show current session's context window usage\n  mcp         See mcp server loaded\n  model       Select a model for the current conversation session\n  experiment  Toggle experimental features\n  subscribe   Upgrade to a Q Developer Pro subscription for increased query limits\n  save        Save the current conversation\n  load        Load a previous conversation\n  todos       View, manage, and resume to-do lists\n  help        Print this message or the help of the given subcommand(s)\n\nOptions:\n  -h, --help  Print help (see more with '--help')\n",
+                      "documentation": "\n\n--- README.md ---\n# Amazon Q CLI\n\n## Installation\n\n- **macOS**:\n  - **DMG**: [Download now](https://desktop-release.q.us-east-1.amazonaws.com/latest/Amazon%20Q.dmg)\n- **Linux**:\n  - [Ubuntu/Debian](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/command-line-installing.html#command-line-installing-ubuntu)\n  - [AppImage](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/command-line-installing.html#command-line-installing-appimage)\n  - [Alternative Linux builds](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/command-line-installing.html#command-line-installing-alternative-linux)\n\n## Contributing\n\nThank you so much for considering to contribute to Amazon Q.\n\nBefore getting started, see our [contributing docs](CONTRIBUTING.md#security-issue-notifications).\n\n### Prerequisites\n\n- MacOS\n  - Xcode 13 or later\n  - Brew\n\n#### 1. Clone repo\n\n```shell\ngit clone https://github.com/aws/amazon-q-developer-cli.git\n```\n\n#### 2. Install the Rust toolchain using [Rustup](https://rustup.rs):\n\n```shell\ncurl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\nrustup default stable\nrustup toolchain install nightly\ncargo install typos-cli\n```\n\n#### 3. Develop locally\n\n- To compile and run: `cargo run --bin chat_cli`.\n- To run tests: `cargo test`.\n- To run lints: `cargo clippy`.\n- To format rust files: `cargo +nightly fmt`.\n- To run subcommands: `cargo run --bin chat_cli -- {subcommand}`.\n  - Login would then be: `cargo run --bin chat_cli -- login`\n\n## Project Layout\n\n- [`chat_cli`](crates/chat-cli/) - the `q` CLI, allows users to interface with Amazon Q Developer from\n  the command line\n- [`scripts/`](scripts/) - Contains ops and build related scripts\n- [`crates/`](crates/) - Contains all rust crates\n- [`docs/`](docs/) - Contains technical documentation\n\n## Security\n\nFor security related concerns, see [here](SECURITY.md).\n\n## Licensing\n\nThis repo is dual licensed under MIT and Apache 2.0 licenses.\n\nThose licenses can be found [here](LICENSE.MIT) and [here](LICENSE.APACHE).\n\n“Amazon Web Services” and all related marks, including logos, graphic designs, and service names, are trademarks or trade dress of AWS in the U.S. and other countries. AWS’s trademarks and trade dress may not be used in connection with any product or service that is not AWS’s, in any manner that is likely to cause confusion among customers, or in any manner that disparages or discredits AWS.\n\n\n--- docs/built-in-tools.md ---\n# Built-in Tools\n\nAmazon Q CLI includes several built-in tools that agents can use. This document describes each tool and its configuration options.\n\n- [`execute_bash`](#execute_bash-tool) — Execute a shell command.\n- [`fs_read`](#fs_read-tool) — Read files, directories, and images.\n- [`fs_write`](#fs_write-tool) — Create and edit files.\n- [`introspect`](#introspect-tool) — Provide information about Q CLI capabilities and documentation.\n- [`report_issue`](#report_issue-tool) — Open a GitHub issue template.\n- [`knowledge`](#knowledge-tool) — Store and retrieve information in a knowledge base.\n- [`thinking`](#thinking-tool) — Internal reasoning mechanism.\n- [`todo_list`](#todo_list-tool) — Create and manage TODO lists for tracking multi-step tasks.\n- [`use_aws`](#use_aws-tool) — Make AWS CLI API calls.\n\n## Execute_bash Tool\n\nExecute the specified bash command.\n\n### Configuration\n\n```json\n{\n  \"toolsSettings\": {\n    \"execute_bash\": {\n      \"allowedCommands\": [\"git status\", \"git fetch\"],\n      \"deniedCommands\": [\"git commit .*\", \"git push .*\"],\n      \"autoAllowReadonly\": true\n    }\n  }\n}\n```\n\n### Configuration Options\n\n| Option | Type | Default | Description                                                                              |\n|--------|------|---------|------------------------------------------------------------------------------------------|\n| `allowedCommands` | array of strings | `[]` | List of specific commands that are allowed without prompting. Supports regex formatting. Note that regex entered are anchored with \\A and \\z |\n| `deniedCommands` | array of strings | `[]` | List of specific commands that are denied. Supports regex formatting. Note that regex entered are anchored with \\A and \\z. Deny rules are evaluated before allow rules |\n| `autoAllowReadonly` | boolean | `false` | Whether to allow read-only commands without prompting                                    |\n\n## Fs_read Tool\n\nTool for reading files, directories, and images.\n\n### Configuration\n\n```json\n{\n  \"toolsSettings\": {\n    \"fs_read\": {\n      \"allowedPaths\": [\"~/projects\", \"./src/**\"],\n      \"deniedPaths\": [\"/some/denied/path/\", \"/another/denied/path/**/file.txt\"]\n    }\n  }\n}\n```\n\n### Configuration Options\n\n| Option | Type | Default | Description |\n|--------|------|---------|-------------|\n| `allowedPaths` | array of strings | `[]` | List of paths that can be read without prompting. Supports glob patterns. Glob patterns have the same behavior as gitignore. For example, `~/temp` would match `~/temp/child` and `~/temp/child/grandchild` |\n| `deniedPaths` | array of strings | `[]` | List of paths that are denied. Supports glob patterns. Deny rules are evaluated before allow rules. Glob patterns have the same behavior as gitignore. For example, `~/temp` would match `~/temp/child` and `~/temp/child/grandchild`  |\n\n## Fs_write Tool\n\nTool for creating and editing files.\n\n### Configuration\n\n```json\n{\n  \"toolsSettings\": {\n    \"fs_write\": {\n      \"allowedPaths\": [\"~/projects/output.txt\", \"./src/**\"],\n      \"deniedPaths\": [\"/some/denied/path/\", \"/another/denied/path/**/file.txt\"]\n    }\n  }\n}\n```\n\n### Configuration Options\n\n| Option | Type | Default | Description |\n|--------|------|---------|-------------|\n| `allowedPaths` | array of strings | `[]` | List of paths that can be written to without prompting. Supports glob patterns. Glob patterns have the same behavior as gitignore.For example, `~/temp` would match `~/temp/child` and `~/temp/child/grandchild` |\n| `deniedPaths` | array of strings | `[]` | List of paths that are denied. Supports glob patterns. Deny rules are evaluated before allow rules. Glob patterns have the same behavior as gitignore.For example, `~/temp` would match `~/temp/child` and `~/temp/child/grandchild` |\n\n## Introspect Tool\n\nProvide information about Q CLI capabilities, features, commands, and documentation. This tool accesses Q CLI's built-in documentation and help content to answer questions about the CLI's functionality.\n\n### Usage\n\nThe introspect tool is automatically used when you ask questions about Q CLI itself, such as:\n- \"What can you do?\"\n- \"How do I save conversations?\"\n- \"What commands are available?\"\n- \"Do you have feature X?\"\n\n### Behavior\n\n- Tries to provide the information that is explicitly documented\n- Accesses README, built-in tools documentation, experiments, and settings information\n- Automatically enters tangent mode when configured to do so and if we set the setting introspect.tangentMode = true.\n\n## Report_issue Tool\n\nOpens the browser to a pre-filled GitHub issue template to report chat issues, bugs, or feature requests.\n\nThis tool has no configuration options.\n\n## Knowledge Tool (experimental)\n\nStore and retrieve information in a knowledge base across chat sessions. Provides semantic search capabilities for files, directories, and text content.\n\nThis tool has no configuration options.\n\n## Thinking Tool (experimental)\n\nAn internal reasoning mechanism that improves the quality of complex tasks by breaking them down into atomic actions.\n\nThis tool has no configuration options.\n\n## TODO List Tool (experimental)\n\nCreate and manage TODO lists for tracking multi-step tasks. Lists are stored locally in `.amazonq/cli-todo-lists/`.\n\nThis tool has no configuration options.\n\n## Use_aws Tool\n\nMake AWS CLI API calls with the specified service, operation, and parameters.\n\n### Configuration\n\n```json\n{\n  \"toolsSettings\": {\n    \"use_aws\": {\n      \"allowedServices\": [\"s3\", \"lambda\", \"ec2\"],\n      \"deniedServices\": [\"eks\", \"rds\"],\n      \"autoAllowReadonly\": true\n    }\n  }\n}\n```\n\n### Configuration Options\n\n| Option | Type | Default | Description |\n|--------|------|---------|-------------|\n| `allowedServices` | array of strings | `[]` | List of AWS services that can be accessed without prompting |\n| `deniedServices` | array of strings | `[]` | List of AWS services to deny. Deny rules are evaluated before allow rules |\n| `autoAllowReadonly` | boolean | `false` | Whether to automatically allow read-only operations (get, describe, list, ls, search, batch_get) without prompting |\n\n## Using Tool Settings in Agent Configuration\n\nTool settings are specified in the `toolsSettings` section of the agent configuration file. Each tool's settings are specified using the tool's name as the key.\n\nFor MCP server tools, use the format `@server_name/tool_name` as the key:\n\n```json\n{\n  \"toolsSettings\": {\n    \"fs_write\": {\n      \"allowedPaths\": [\"~/projects\"]\n    },\n    \"@git/git_status\": {\n      \"git_user\": \"$GIT_USER\"\n    }\n  }\n}\n```\n\n## Tool Permissions\n\nTools can be explicitly allowed in the `allowedTools` section of the agent configuration:\n\n```json\n{\n  \"allowedTools\": [\n    \"fs_read\",\n    \"knowledge\",\n    \"@git/git_status\"\n  ]\n}\n```\n\nIf a tool is not in the `allowedTools` list, the user will be prompted for permission when the tool is used unless an allowed `toolSettings` configuration is set.\n\nSome tools have default permission behaviors:\n- `fs_read` and `report_issue` are trusted by default\n- `execute_bash`, `fs_write`, and `use_aws` prompt for permission by default, but can be configured to allow specific commands/paths/services\n\n\n--- docs/experiments.md ---\n# Experimental Features\n\nAmazon Q CLI includes experimental features that can be toggled on/off using the `/experiment` command. These features are in active development and may change or be removed at any time.\n\n## Available Experiments\n\n### Knowledge\n**Command:** `/knowledge`  \n**Description:** Enables persistent context storage and retrieval across chat sessions\n\n**Features:**\n- Store and search through files, directories, and text content\n- Semantic search capabilities for better context retrieval  \n- Persistent knowledge base across chat sessions\n- Add/remove/search knowledge contexts\n\n**Usage:**\n```\n/knowledge add <path>        # Add files or directories to knowledge base\n/knowledge show             # Display knowledge base contents\n/knowledge remove <path>    # Remove knowledge base entry by path\n/knowledge update <path>    # Update a file or directory in knowledge base\n/knowledge clear            # Remove all knowledge base entries\n/knowledge status           # Show background operation status\n/knowledge cancel           # Cancel background operation\n```\n\n### Thinking\n**Description:** Enables complex reasoning with step-by-step thought processes\n\n**Features:**\n- Shows AI reasoning process for complex problems\n- Helps understand how conclusions are reached\n- Useful for debugging and learning\n- Transparent decision-making process\n\n**When enabled:** The AI will show its thinking process when working through complex problems or multi-step reasoning.\n\n### Tangent Mode\n**Command:** `/tangent`  \n**Description:** Enables conversation checkpointing for exploring tangential topics\n\n**Features:**\n- Create conversation checkpoints to explore side topics\n- Return to the main conversation thread at any time\n- Preserve conversation context while branching off\n- Keyboard shortcut support (default: Ctrl+T)\n\n**Usage:**\n```\n/tangent                    # Toggle tangent mode on/off\n```\n\n**Settings:**\n- `chat.enableTangentMode` - Enable/disable tangent mode feature (boolean)\n- `chat.tangentModeKey` - Keyboard shortcut key (single character, default: 't')\n- `introspect.tangentMode` - Auto-enter tangent mode for introspect questions (boolean)\n\n**When enabled:** Use `/tangent` or the keyboard shortcut to create a checkpoint and explore tangential topics. Use the same command to return to your main conversation.\n\n### TODO Lists\n**Tool name**: `todo_list`\n**Command:** `/todos`  \n**Description:** Enables Q to create and modify TODO lists using the `todo_list` tool and the user to view and manage existing TODO lists using `/todos`.\n\n**Features:**\n- Q will automatically make TODO lists when appropriate or when asked\n- View, manage, and delete TODOs using `/todos`\n- Resume existing TODO lists stored in `.amazonq/cli-todo-lists`\n\n**Usage:**\n```\n/todos clear-finished       # Delete completed TODOs in your working directory\n/todos resume               # Select and resume an existing TODO list\n/todos view                 # Select and view and existing TODO list\n/todos delete               # Select and delete an existing TODO list\n```\n\n**Settings:**\n- `chat.enableTodoList` - Enable/disable TODO list functionality (boolean)\n\n\n## Managing Experiments\n\nUse the `/experiment` command to toggle experimental features:\n\n```\n/experiment\n```\n\nThis will show an interactive menu where you can:\n- See current status of each experiment (ON/OFF)\n- Toggle experiments by selecting them\n- View descriptions of what each experiment does\n\n## Important Notes\n\n⚠️ **Experimental features may be changed or removed at any time**  \n⚠️ **Experience might not be perfect**  \n⚠️ **Use at your own discretion in production workflows**\n\nThese features are provided to gather feedback and test new capabilities. Please report any issues or feedback through the `/issue` command.\n\n## Fuzzy Search Support\n\nAll experimental commands are available in the fuzzy search (Ctrl+S):\n- `/experiment` - Manage experimental features\n- `/knowledge` - Knowledge base commands (when enabled)\n- `/todos` - User-controlled TODO list commands (when enabled)\n\n## Settings Integration\n\nExperiments are stored as settings and persist across sessions:\n- `EnabledKnowledge` - Knowledge experiment state\n- `EnabledThinking` - Thinking experiment state\n- `EnabledTodoList` - TODO list experiment state\n\nYou can also manage these through the settings system if needed.\n\n\n--- docs/agent-file-locations.md ---\n# Agent File Locations\n\nAgent configuration files can be placed in two different locations, allowing for both workspace-specific and user-wide agent configurations.\n\n## Local Agents (Workspace-Specific)\n\nLocal agents are stored in the current working directory under:\n\n```\n.amazonq/cli-agents/\n```\n\nThese agents are specific to the current workspace or project and are only available when running Q CLI from that directory or its subdirectories.\n\n**Example structure:**\n```\nmy-project/\n├── .amazonq/\n│       └── cli-agents/\n│           ├── dev-agent.json\n│           └── aws-specialist.json\n└── src/\n    └── main.py\n```\n\n## Global Agents (User-Wide)\n\nGlobal agents are stored in your home directory under:\n\n```\n~/.aws/amazonq/cli-agents/\n```\n\nNote: For globally available agents, the `amazonq` directory is in the `.aws` folder. \n\nThese agents are available from any directory when using Q CLI.\n\n**Example structure:**\n```\n~/.aws/amazonq/cli-agents/\n├── general-assistant.json\n├── code-reviewer.json\n└── documentation-writer.json\n```\n\n## Agent Precedence\n\nWhen Q CLI looks for an agent, it follows this precedence order:\n\n1. **Local first**: Checks `.amazonq/cli-agents/` in the current working directory\n2. **Global fallback**: If not found locally, checks `~/.aws/amazonq/cli-agents/` in the home directory\n\n## Naming Conflicts\n\nIf both local and global directories contain agents with the same name, the **local agent takes precedence**. When this happens, Q CLI will display a warning message:\n\n```\nWARNING: Agent conflict for my-agent. Using workspace version.\n```\n\nThe global agent with the same name will be ignored in favor of the local version.\n\n## Best Practices\n\n### Use Local Agents For:\n- Project-specific configurations\n- Agents that need access to specific project files or tools\n- Development environments with unique requirements\n- Sharing agent configurations with team members via version control\n\n### Use Global Agents For:\n- General-purpose agents used across multiple projects\n- Personal productivity agents\n- Agents that don't require project-specific context\n- Commonly used development tools and workflows\n\n## Example Usage\n\nTo create a local agent for your current project:\n\n```bash\nmkdir -p .amazonq/cli-agents\ncat > .amazonq/cli-agents/project-helper.json << 'EOF'\n{\n  \"description\": \"Helper agent for this specific project\",\n  \"tools\": [\"fs_read\", \"fs_write\", \"execute_bash\"],\n  \"resources\": [\n    \"file://README.md\",\n    \"file://docs/**/*.md\"\n  ]\n}\nEOF\n```\n\nTo create a global agent available everywhere:\n\n```bash\nmkdir -p ~/.aws/amazonq/cli-agents\ncat > ~/.aws/amazonq/cli-agents/general-helper.json << 'EOF'\n{\n  \"description\": \"General purpose assistant\",\n  \"tools\": [\"*\"],\n  \"allowedTools\": [\"fs_read\"]\n}\nEOF\n```\n\n## Directory Creation\n\nQ CLI will automatically create the global agents directory (`~/.aws/amazonq/cli-agents/`) if it doesn't exist. However, you need to manually create the local agents directory (`.amazonq/cli-agents/`) in your workspace if you want to use local agents.\n\n\n--- docs/tangent-mode.md ---\n# Tangent Mode\n\nTangent mode creates conversation checkpoints, allowing you to explore side topics without disrupting your main conversation flow. Enter tangent mode, ask questions or explore ideas, then return to your original conversation exactly where you left off.\n\n## Enabling Tangent Mode\n\nTangent mode is experimental and must be enabled:\n\n**Via Experiment Command**: Run `/experiment` and select tangent mode from the list.\n\n**Via Settings**: `q settings chat.enableTangentMode true`\n\n## Basic Usage\n\n### Enter Tangent Mode\nUse `/tangent` or Ctrl+T:\n```\n> /tangent\nCreated a conversation checkpoint (↯). Use ctrl + t or /tangent to restore the conversation later.\n```\n\n### In Tangent Mode\nYou'll see a yellow `↯` symbol in your prompt:\n```\n↯ > What is the difference between async and sync functions?\n```\n\n### Exit Tangent Mode\nUse `/tangent` or Ctrl+T again:\n```\n↯ > /tangent\nRestored conversation from checkpoint (↯). - Returned to main conversation.\n```\n\n### Exit Tangent Mode with Tail\nUse `/tangent tail` to preserve the last conversation entry (question + answer):\n```\n↯ > /tangent tail\nRestored conversation from checkpoint (↯) with last conversation entry preserved.\n```\n\n## Usage Examples\n\n### Example 1: Exploring Alternatives\n```\n> I need to process a large CSV file in Python. What's the best approach?\n\nI recommend using pandas for CSV processing...\n\n> /tangent\nCreated a conversation checkpoint (↯).\n\n↯ > What about using the csv module instead of pandas?\n\nThe csv module is lighter weight...\n\n↯ > /tangent\nRestored conversation from checkpoint (↯).\n\n> Thanks! I'll go with pandas. Can you show me error handling?\n```\n\n### Example 2: Getting Q CLI Help\n```\n> Help me write a deployment script\n\nI can help you create a deployment script...\n\n> /tangent\nCreated a conversation checkpoint (↯).\n\n↯ > What Q CLI commands are available for file operations?\n\nQ CLI provides fs_read, fs_write, execute_bash...\n\n↯ > /tangent\nRestored conversation from checkpoint (↯).\n\n> It's a Node.js application for AWS\n```\n\n### Example 3: Clarifying Requirements\n```\n> I need to optimize this SQL query\n\nCould you share the query you'd like to optimize?\n\n> /tangent\nCreated a conversation checkpoint (↯).\n\n↯ > What information do you need to help optimize a query?\n\nTo optimize SQL queries effectively, I need:\n1. The current query\n2. Table schemas and indexes...\n\n↯ > /tangent\nRestored conversation from checkpoint (↯).\n\n> Here's my query: SELECT * FROM orders...\n```\n\n### Example 4: Keeping Useful Information\n```\n> Help me debug this Python error\n\nI can help you debug that. Could you share the error message?\n\n> /tangent\nCreated a conversation checkpoint (↯).\n\n↯ > What are the most common Python debugging techniques?\n\nHere are the most effective Python debugging techniques:\n1. Use print statements strategically\n2. Leverage the Python debugger (pdb)...\n\n↯ > /tangent tail\nRestored conversation from checkpoint (↯) with last conversation entry preserved.\n\n> Here's my error: TypeError: unsupported operand type(s)...\n\n# The preserved entry (question + answer about debugging techniques) is now part of main conversation\n```\n\n## Configuration\n\n### Keyboard Shortcut\n```bash\n# Change shortcut key (default: t)\nq settings chat.tangentModeKey y\n```\n\n### Auto-Tangent for Introspect\n```bash\n# Auto-enter tangent mode for Q CLI help questions\nq settings introspect.tangentMode true\n```\n\n## Visual Indicators\n\n- **Normal mode**: `> ` (magenta)\n- **Tangent mode**: `↯ > ` (yellow ↯ + magenta)\n- **With profile**: `[dev] ↯ > ` (cyan + yellow ↯ + magenta)\n\n## Best Practices\n\n### When to Use Tangent Mode\n- Asking clarifying questions about the current topic\n- Exploring alternative approaches before deciding\n- Getting help with Q CLI commands or features\n- Testing understanding of concepts\n\n### When NOT to Use\n- Completely unrelated topics (start new conversation)\n- Long, complex discussions (use regular flow)\n- When you want the side discussion in main context\n\n### Tips\n1. **Keep tangents focused** - Brief explorations, not extended discussions\n2. **Return promptly** - Don't forget you're in tangent mode\n3. **Use for clarification** - Perfect for \"wait, what does X mean?\" questions\n4. **Experiment safely** - Test ideas without affecting main conversation\n5. **Use `/tangent tail`** - When both the tangent question and answer are useful for main conversation\n\n## Limitations\n\n- Tangent conversations are discarded when you exit\n- Only one level of tangent supported (no nested tangents)\n- Experimental feature that may change or be removed\n- Must be explicitly enabled\n\n## Troubleshooting\n\n### Tangent Mode Not Working\n```bash\n# Enable via experiment (select from list)\n/experiment\n\n# Or enable via settings\nq settings chat.enableTangentMode true\n```\n\n### Keyboard Shortcut Not Working\n```bash\n# Check/reset shortcut key\nq settings chat.tangentModeKey t\n```\n\n### Lost in Tangent Mode\nLook for the `↯` symbol in your prompt. Use `/tangent` to exit and return to main conversation.\n\n## Related Features\n\n- **Introspect**: Q CLI help (auto-enters tangent if configured)\n- **Experiments**: Manage experimental features with `/experiment`\n\n\n--- docs/introspect-tool.md ---\n# Introspect Tool\n\nThe introspect tool provides Q CLI with self-awareness, automatically answering questions about Q CLI's features, commands, and functionality using official documentation.\n\n## How It Works\n\nThe introspect tool activates automatically when you ask Q CLI questions like:\n- \"How do I save conversations with Q CLI?\"\n- \"What experimental features does Q CLI have?\"\n- \"Can Q CLI read files?\"\n\n## What It Provides\n\n- **Command Help**: Real-time help for all slash commands (`/save`, `/load`, etc.)\n- **Documentation**: Access to README, built-in tools, experiments, and feature guides\n- **Settings**: All configuration options and how to change them\n- **GitHub Links**: Direct links to official documentation for verification\n\n## Important Limitations\n\n**Hallucination Risk**: Despite safeguards, the AI may occasionally provide inaccurate information or make assumptions. **Always verify important details** using the GitHub documentation links provided in responses.\n\n## Usage Examples\n\n```\n> How do I save conversations with Q CLI?\nYou can save conversations using `/save` or `/save name`.\nLoad them later with `/load`.\n\n> What experimental features does Q CLI have?\nQ CLI offers Tangent Mode and Thinking Mode. \nUse `/experiment` to enable them.\n\n> Can Q CLI read and write files?\nYes, Q CLI has fs_read, fs_write, and execute_bash tools\nfor file operations.\n```\n\n## Auto-Tangent Mode\n\nEnable automatic tangent mode for Q CLI help questions:\n\n```bash\nq settings introspect.tangentMode true\n```\n\nThis keeps help separate from your main conversation.\n\n## Best Practices\n\n1. **Be explicit**: Ask \"How does Q CLI handle files?\" not \"How do you handle files?\"\n2. **Verify information**: Check the GitHub links provided in responses\n3. **Use proper syntax**: Reference commands with `/` (e.g., `/save`)\n4. **Enable auto-tangent**: Keep help isolated from main conversations\n\n## Configuration\n\n```bash\n# Enable auto-tangent for introspect questions\nq settings introspect.tangentMode true\n```\n\n## Related Features\n\n- **Tangent Mode**: Isolate help conversations\n- **Experiments**: Enable experimental features with `/experiment`\n\n\n--- docs/todo-lists.md ---\n# TODO Management\n\nThe `/todos` command provides persistent TODO list management for Amazon Q CLI, allowing you to view, resume, and manage TODO lists created during chat sessions.\n\n## Getting Started\n\nTODO lists are automatically created when Q breaks down complex tasks. You can then manage these lists using the todos command:\n\n`/todos view`\n`/todos resume`\n\n## Commands\n\n#### `/todos view`\n\nDisplay and select a TODO list to view its contents, showing task descriptions and completion status.\n\nInteractive selection shows:\n- ✓ Completed lists (green checkmark)\n- ✗ In-progress lists with completion count (red X with progress)\n\n#### `/todos resume`\n\nShow an interactive menu of available TODO lists with their current progress status. Selecting a todo list will load the list back into your chat session, allowing Q to continue where it left off.\n\n#### `/clear-finished`\n\nRemove all completed TODO lists from storage. This helps clean up your workspace by removing lists where all tasks have been completed.\n\n#### `/todos delete [--all]`\n\nDelete specific TODO lists or all lists at once.\n\n`q chat todos delete` # Interactive selection to delete one list\n`q chat todos delete --all` # Delete all TODO lists\n\n**Options:**\n- `--all` - Delete all TODO lists without interactive selection\n\n## Storage\n\nTODO lists are stored locally in `.amazonq/cli-todo-lists/` directory within your current working directory. Each list is saved as a JSON file with:\n\n- Unique timestamp-based ID\n- Task descriptions and completion status  \n- Context updates from completed tasks\n- Modified file paths\n- Overall list description\n\n#### Interactive Selection\n\nAll commands use interactive selection allowing you to:\n- Navigate with arrow keys\n- Press Enter to select\n- Press Esc to cancel\n\n## Best Practices\n\n#### Managing Lists\n\n- Use `clear-finished` regularly to remove completed lists\n- Resume lists to continue complex multi-step tasks\n- View lists to check progress without resuming\n\n#### Workflow Integration\n\n- Let Q create TODO lists for complex tasks automatically\n- Use `resume` to pick up where you left off in previous sessions\n- Check `view` to see what tasks remain before resuming work\n\n#### TODO List Storage\n\n- Lists are stored in current working directory only\n- No automatic cleanup of old lists\n- No cross-directory list sharing\n\n## Troubleshooting\n\n#### No Lists Available\n\nIf commands show \"No to-do lists available\":\n\n1. **Check directory**: Ensure you're in the directory where lists were created\n2. **Verify storage**: Look for `.amazonq/cli-todo-lists/` directory\n3. **Create lists**: Use chat sessions to create new TODO lists\n\n#### Lists Not Loading\n\nIf lists exist but won't load:\n\n1. **Check permissions**: Ensure read access to `.amazonq/cli-todo-lists/`\n2. **Verify format**: Lists should be valid JSON files\n3. **Check file integrity**: Corrupted files may prevent loading\n\n## `todo_list` vs. `/todos`\nThe `todo_list` tool is specifically for the model to call. The model is allowed to create TODO lists, mark tasks as complete, add/remove\ntasks, load TODO lists with a given ID (which are automatically provided when resuming TODO lists), and search for existing TODO lists.\n\nThe `/todos` command is for the user to manage existing TODO lists created by the model. The user can view, resume, and delete TODO lists\nby using the appropriate subcommand and selecting the TODO list to perform the action on.\n\n## Examples\n#### Asking Q to make a TODO list:\n```\n> Make a todo list with 3 read-only tasks.\n\n> I'll create a todo list with 3 read-only tasks for you.\n\n🛠️  Using tool: todo_list (trusted)\n ⋮ \n ● TODO:\n[ ] Review project documentation\n[ ] Check system status\n[ ] Read latest updates\n ⋮ \n ● Completed in 0.4s\n```\n\n#### Selecting a TODO list to view:\n```\n> /todos view\n\n? Select a to-do list to view: ›\n❯ ✗ Unfinished todo list (0/3)\n  ✔ Completed todo list (3/3)\n```\n\n#### Resuming a TODO list (after selecting):\n```\n> /todos resume\n\n⟳ Resuming: Read-only tasks for information gathering\n\n🛠️  Using tool: todo_list (trusted)\n ⋮ \n ● TODO:\n[x] Review project documentation\n[ ] Check system status\n[ ] Read latest updates\n ⋮ \n ● Completed in 0.1s\n ```\n\n\n\n\n\n\n--- docs/hooks.md ---\n# Hooks\n\nHooks allow you to execute custom commands at specific points during agent lifecycle and tool execution. This enables security validation, logging, formatting, context gathering, and other custom behaviors.\n\n## Defining Hooks\n\nHooks are defined in the agent configuration file. See the [agent format documentation](agent-format.md#hooks-field) for the complete syntax and examples.\n\n## Hook Event\n\nHooks receive hook event in JSON format via STDIN:\n\n```json\n{\n  \"hook_event_name\": \"agentSpawn\",\n  \"cwd\": \"/current/working/directory\"\n}\n```\n\nFor tool-related hooks, additional fields are included:\n- `tool_name`: Name of the tool being executed\n- `tool_input`: Tool-specific parameters (see individual tool documentation)\n- `tool_response`: Tool execution results (PostToolUse only)\n\n## Hook Output\n\n- **Exit code 0**: Hook succeeded. STDOUT is captured but not shown to user.\n- **Exit code 2**: (PreToolUse only) Block tool execution. STDERR is returned to the LLM.\n- **Other exit codes**: Hook failed. STDERR is shown as warning to user.\n\n## Tool Matching\n\nUse the `matcher` field to specify which tools the hook applies to:\n\n### Examples\n- `\"fs_write\"` - Exact match for built-in tools\n- `\"fs_*\"` - Wildcard pattern for built-in tools\n- `\"@git\"` - All tools from git MCP server\n- `\"@git/status\"` - Specific tool from git MCP server\n- `\"*\"` - All tools (built-in and MCP)\n- `\"@builtin\"` - All built-in tools only\n- No matcher - Applies to all tools\n\nFor complete tool reference format, see [agent format documentation](agent-format.md#tools-field).\n\n## Hook Types\n\n### AgentSpawn\n\nRuns when agent is activated. No tool context provided.\n\n**Hook Event**\n```json\n{\n  \"hook_event_name\": \"agentSpawn\",\n  \"cwd\": \"/current/working/directory\"\n}\n```\n\n**Exit Code Behavior:**\n- **0**: Hook succeeded, STDOUT is added to agent's context\n- **Other**: Show STDERR warning to user\n\n### UserPromptSubmit\n\nRuns when user submits a prompt. Output is added to conversation context.\n\n**Hook Event**\n```json\n{\n  \"hook_event_name\": \"userPromptSubmit\",\n  \"cwd\": \"/current/working/directory\",\n  \"prompt\": \"user's input prompt\"\n}\n```\n\n**Exit Code Behavior:**\n- **0**: Hook succeeded, STDOUT is added to agent's context\n- **Other**: Show STDERR warning to user\n\n### PreToolUse\n\nRuns before tool execution. Can validate and block tool usage.\n\n**Hook Event**\n```json\n{\n  \"hook_event_name\": \"preToolUse\",\n  \"cwd\": \"/current/working/directory\",\n  \"tool_name\": \"fs_read\",\n  \"tool_input\": {\n    \"operations\": [\n      {\n        \"mode\": \"Line\",\n        \"path\": \"/current/working/directory/docs/hooks.md\"\n      }\n    ]\n  }\n}\n```\n\n**Exit Code Behavior:**\n- **0**: Allow tool execution.\n- **2**: Block tool execution, return STDERR to LLM.\n- **Other**: Show STDERR warning to user, allow tool execution.\n\n### PostToolUse\n\nRuns after tool execution with access to tool results.\n\n**Hook Event**\n```json\n{\n  \"hook_event_name\": \"postToolUse\",\n  \"cwd\": \"/current/working/directory\",\n  \"tool_name\": \"fs_read\",\n  \"tool_input\": {\n    \"operations\": [\n      {\n        \"mode\": \"Line\",\n        \"path\": \"/current/working/directory/docs/hooks.md\"\n      }\n    ]\n  },\n  \"tool_response\": {\n    \"success\": true,\n    \"result\": [\"# Hooks\\n\\nHooks allow you to execute...\"]\n  }\n}\n```\n\n**Exit Code Behavior:**\n- **0**: Hook succeeded.\n- **Other**: Show STDERR warning to user. Tool already ran.\n\n### MCP Example\n\nFor MCP tools, the tool name includes the full namespaced format including the MCP Server name:\n\n**Hook Event**\n```json\n{\n  \"hook_event_name\": \"preToolUse\",\n  \"cwd\": \"/current/working/directory\",\n  \"tool_name\": \"@postgres/query\",\n  \"tool_input\": {\n    \"sql\": \"SELECT * FROM orders LIMIT 10;\"\n  }\n}\n```\n\n## Timeout\n\nDefault timeout is 30 seconds (30,000ms). Configure with `timeout_ms` field.\n\n## Caching\n\nSuccessful hook results are cached based on `cache_ttl_seconds`:\n- `0`: No caching (default)\n- `> 0`: Cache successful results for specified seconds\n- AgentSpawn hooks are never cached\n\n--- changelog (from feed.json) ---\n\n## 1.16.2 (2025-09-19)\n- added: Add support for preToolUse and postToolUse hook -  [#2875](https://github.com/aws/amazon-q-developer-cli/pull/2875)\n- added: Support for specifying oauth scopes via config - [#2925]( https://github.com/aws/amazon-q-developer-cli/pull/2925)\n- fixed: Support for headers ingestion for remote mcp - [#2925]( https://github.com/aws/amazon-q-developer-cli/pull/2925)\n- added: Change autocomplete shortcut from ctrl-f to ctrl-g - [#2634](https://github.com/aws/amazon-q-developer-cli/pull/2634)\n- fixed: Fix file-path expansion in mcp-config - [#2915]( https://github.com/aws/amazon-q-developer-cli/pull/2915)\n- fixed: Fix filepath expansion to use absolute paths - [#2933](https://github.com/aws/amazon-q-developer-cli/pull/2933)\n\n## 1.16.1 (2025-09-17)\n- fixed: Dashboard not updating after logging in - [#688](https://github.com/aws/amazon-q-developer-cli-autocomplete/pull/688)\n\n## 1.16.0 (2025-09-16)\n- added: Support for remote MCP connections - [#2836](https://github.com/aws/amazon-q-developer-cli/pull/2836)\n- added: A new `/tangent tail` command to preserve the last tangent conversation - [#2838](https://github.com/aws/amazon-q-developer-cli/pull/2838)\n- added: A new edit subcommand to `/agent` slash command for modifying existing agents - [#2854](https://github.com/aws/amazon-q-developer-cli/pull/2854)\n- added: A new auto-announcement feature with `/changelog` command - [#2833](https://github.com/aws/amazon-q-developer-cli/pull/2833)\n- added: A new CLI history persistence feature with file storage - [#2769](https://github.com/aws/amazon-q-developer-cli/pull/2769)\n- added: Support for comma-containing arguments in MCP --args parameter - [#2754](https://github.com/aws/amazon-q-developer-cli/pull/2754)\n- added: Support for configurable autoAllowReadonly setting in use_aws tool - [#2828](https://github.com/aws/amazon-q-developer-cli/pull/2828)\n- added: Support for configurable line wrapping in chat interface - [#2816](https://github.com/aws/amazon-q-developer-cli/pull/2816)\n- added: Support for model field in agent configuration format - [#2815](https://github.com/aws/amazon-q-developer-cli/pull/2815)\n- added: AGENTS.md documentation to default agent resources - [#2812](https://github.com/aws/amazon-q-developer-cli/pull/2812)\n- security: Reduced default fs_read trust permission to current working directory only - [#2824](https://github.com/aws/amazon-q-developer-cli/pull/2824)\n- security: Changed autoAllowReadonly default to false for security in execute_bash - [#2846](https://github.com/aws/amazon-q-developer-cli/pull/2846)\n- security: Updated dangerous patterns for execute_bash to include $ character - [#2811](https://github.com/aws/amazon-q-developer-cli/pull/2811)\n- fixed: Path with trailing slash not being handled in file matching - [#2817](https://github.com/aws/amazon-q-developer-cli/pull/2817)\n- fixed: Summary being erroneously preserved when conversation is cleared - [#2793](https://github.com/aws/amazon-q-developer-cli/pull/2793)\n\n## 1.15.0 (2025-09-02)\n- added: A new command `/experiment` for toggling experimental features - [#2711](https://github.com/aws/amazon-q-developer-cli/pull/2711)\n- added: A new command `/agent generate` for generating agent config with Q - [#2690](https://github.com/aws/amazon-q-developer-cli/pull/2690)\n- added: A new command `/tangent` for going on a tangent without context pollution - [#2634](https://github.com/aws/amazon-q-developer-cli/pull/2634)\n- added: A new to-do list tool for handling complex multi-step prompts - [#2533](https://github.com/aws/amazon-q-developer-cli/pull/2533)\n- added: Agent-scoped knowledge base and context-specific search - [#2647](https://github.com/aws/amazon-q-developer-cli/pull/2647)\n- added: A new tool `introspect` that allows Q CLI to answer questions about itself - [#2677](https://github.com/aws/amazon-q-developer-cli/pull/2677)\n\n## 1.14.1 (2025-08-21)\n- fixed: Tool permission issue in agent - [#2619](https://github.com/aws/amazon-q-developer-cli/pull/2619)\n- added: MCP admin-level configuration with GetProfile - [#2639](https://github.com/aws/amazon-q-developer-cli/pull/2639)\n- added: Wildcard pattern matching support for agent allowedTools - [#2612](https://github.com/aws/amazon-q-developer-cli/pull/2612)\n- added: Agent hot swap capability - [#2637](https://github.com/aws/amazon-q-developer-cli/pull/2637)\n- fixed: Agent default profile printing issue in `use_aws`, plus minor doc updates - [#2617](https://github.com/aws/amazon-q-developer-cli/pull/2617)\n- changed: Knowledge beta improvements (phase 2): Refactored async_client and added BM25 support - [#2608](https://github.com/aws/amazon-q-developer-cli/pull/2608)\n\n\n--- CONTRIBUTING.md ---\n# Contributing Guidelines\n\nThank you for your interest in contributing to Amazon Q. Whether it's a bug report, new feature, correction, or additional\ndocumentation, we greatly value feedback and contributions from our community.\n\nPlease read through this document before submitting any issues or pull requests to ensure we have all the necessary\ninformation to effectively respond to your bug report or contribution.\n\n## Reporting Bugs/Feature Requests\n\nWe welcome you to use the GitHub issue tracker to report bugs or suggest features.\n\nWhen filing an issue, please check existing open, or recently closed, issues to make sure somebody else hasn't already\nreported the issue. Please try to include as much information as you can. Details like these are incredibly useful:\n\n- A reproducible test case or series of steps\n- The version of our code being used\n- Any modifications you've made relevant to the bug\n- Anything unusual about your environment or deployment\n\n## Contributing via Pull Requests\n\nBefore making changes around new features, please first make a feature request and get a statement from the team. This codebase moves quickly, and you work is likely to be lost if not first coordinated with us.\n\nContributions via pull requests are much appreciated. Before sending us a pull request, please ensure that:\n\n1. You are working against the latest source on the _main_ branch.\n2. You check existing open, and recently merged, pull requests to make sure someone else hasn't addressed the problem already.\n3. You open an issue to discuss any significant work - we would hate for your time to be wasted.\n\nTo send us a pull request, please:\n\n1. Fork the repository.\n2. Modify the source; please focus on the specific change you are contributing. If you also reformat all the code, it will be hard for us to focus on your change.\n3. Ensure local tests pass.\n4. Commit to your fork using clear commit messages.\n5. Send us a pull request, answering any default questions in the pull request interface.\n6. Pay attention to any automated CI failures reported in the pull request, and stay involved in the conversation.\n\nGitHub provides additional document on [forking a repository](https://help.github.com/articles/fork-a-repo/) and\n[creating a pull request](https://help.github.com/articles/creating-a-pull-request/).\n\n## Finding contributions to work on\n\nLooking at the existing issues is a great way to find something to contribute on. As our projects, by default, use the default GitHub issue labels (enhancement/bug/duplicate/help wanted/invalid/question/wontfix), looking at any 'help wanted' issues is a great place to start.\n\n## Code of Conduct\n\nThis project has adopted the [Amazon Open Source Code of Conduct](https://aws.github.io/code-of-conduct).\nFor more information see the [Code of Conduct FAQ](https://aws.github.io/code-of-conduct-faq) or contact\nopensource-codeofconduct@amazon.com with any additional questions or comments.\n\n## Security issue notifications\n\nIf you discover a potential security issue in this project we ask that you notify AWS/Amazon Security via our [vulnerability reporting page](http://aws.amazon.com/security/vulnerability-reporting/). Please do **not** create a public github issue.\n\n## Licensing\n\nThis repo is dual licensed under MIT and Apache 2.0 licenses. We will ask you to confirm the licensing of your contribution.\n\n\n--- Available Settings ---\nQ CLI supports these configuration settings (use `q settings` command from terminal, NOT /settings):\n\n• telemetry.enabled - Enable/disable telemetry collection (boolean)\n• telemetryClientId - Legacy client identifier for telemetry (string)\n• codeWhisperer.shareCodeWhispererContentWithAWS - Share content with CodeWhisperer service (boolean)\n• chat.enableThinking - Enable thinking tool for complex reasoning (boolean)\n• chat.enableKnowledge - Enable knowledge base functionality (boolean)\n• knowledge.defaultIncludePatterns - Default file patterns to include in knowledge base (array)\n• knowledge.defaultExcludePatterns - Default file patterns to exclude from knowledge base (array)\n• knowledge.maxFiles - Maximum number of files for knowledge indexing (number)\n• knowledge.chunkSize - Text chunk size for knowledge processing (number)\n• knowledge.chunkOverlap - Overlap between text chunks (number)\n• knowledge.indexType - Type of knowledge index to use (string)\n• chat.skimCommandKey - Key binding for fuzzy search command (single character)\n• chat.autocompletionKey - Key binding for autocompletion hint acceptance (single character)\n• chat.enableTangentMode - Enable tangent mode feature (boolean)\n• chat.tangentModeKey - Key binding for tangent mode toggle (single character)\n• introspect.tangentMode - Auto-enter tangent mode for introspect questions (boolean)\n• chat.greeting.enabled - Show greeting message on chat start (boolean)\n• api.timeout - API request timeout in seconds (number)\n• chat.editMode - Enable edit mode for chat interface (boolean)\n• chat.enableNotifications - Enable desktop notifications (boolean)\n• api.codewhisperer.service - CodeWhisperer service endpoint URL (string)\n• api.q.service - Q service endpoint URL (string)\n• mcp.initTimeout - MCP server initialization timeout (number)\n• mcp.noInteractiveTimeout - Non-interactive MCP timeout (number)\n• mcp.loadedBefore - Track previously loaded MCP servers (boolean)\n• chat.defaultModel - Default AI model for conversations (string)\n• chat.disableMarkdownRendering - Disable markdown formatting in chat (boolean)\n• chat.defaultAgent - Default agent configuration (string)\n• chat.disableAutoCompaction - Disable automatic conversation summarization (boolean)\n• chat.enableHistoryHints - Show conversation history hints (boolean)\n• chat.enableTodoList - Enable the todo list feature (boolean)\n\nNOTE: Settings are managed via `q settings` command from terminal, not slash commands in chat.\n\n\n--- CRITICAL INSTRUCTION ---\nYOU MUST ONLY provide information that is explicitly documented in the sections above. If specific details about any tool, feature, or command are not documented, you MUST clearly state that the information is not available in the documentation. DO NOT generate plausible-sounding information or make assumptions about undocumented features.\n\n--- GitHub References ---\nINSTRUCTION: When your response uses information from any of these documentation files, include the relevant GitHub link(s) at the end:\n• README.md: https://github.com/aws/amazon-q-developer-cli/blob/main/README.md\n• Built-in Tools: https://github.com/aws/amazon-q-developer-cli/blob/main/docs/built-in-tools.md\n• Experiments: https://github.com/aws/amazon-q-developer-cli/blob/main/docs/experiments.md\n• Agent File Locations: https://github.com/aws/amazon-q-developer-cli/blob/main/docs/agent-file-locations.md\n• Tangent Mode: https://github.com/aws/amazon-q-developer-cli/blob/main/docs/tangent-mode.md\n• Introspect Tool: https://github.com/aws/amazon-q-developer-cli/blob/main/docs/introspect-tool.md\n• Todo Lists: https://github.com/aws/amazon-q-developer-cli/blob/main/docs/todo-lists.md\n• Hooks: https://github.com/aws/amazon-q-developer-cli/blob/main/docs/hooks.md\n• Contributing: https://github.com/aws/amazon-q-developer-cli/blob/main/CONTRIBUTING.md\n",
+                      "query_context": "How do I save the chat?",
+                      "recommendations": []
+                    }
+                  }
+                ],
+                "status": "Success"
+              }
+            ]
+          }
+        },
+        "timestamp": null,
+        "images": null
+      },
+      "assistant": {
+        "Response": {
+          "message_id": "e8cbcf8a-b5d9-4050-af15-fa1838c3f88a",
+          "content": "You can save the current conversation using the `/save` command:\n\n```\n/save\n```\n\nThis saves the conversation with an auto-generated name, or you can specify a custom name:\n\n```\n/save my-conversation-name\n```\n\nTo load a previously saved conversation later, use:\n\n```\n/load\n```\n\nThis will show you a list of saved conversations to choose from.\n\n**Reference:** https://github.com/aws/amazon-q-developer-cli/blob/main/README.md"
+        }
+      },
+      "request_metadata": {
+        "request_id": "06c1db5f-e1b6-4c4a-8b28-aa3b237e0f9f",
+        "message_id": "e8cbcf8a-b5d9-4050-af15-fa1838c3f88a",
+        "request_start_timestamp_ms": 1759070725891,
+        "stream_end_timestamp_ms": 1759070731207,
+        "time_to_first_chunk": {
+          "secs": 3,
+          "nanos": 481399883
+        },
+        "time_between_chunks": [
+          {
+            "secs": 0,
+            "nanos": 42917
+          },
+          {
+            "secs": 0,
+            "nanos": 9030
+          },
+          {
+            "secs": 0,
+            "nanos": 15478
+          },
+          {
+            "secs": 0,
+            "nanos": 7099
+          },
+          {
+            "secs": 0,
+            "nanos": 5741
+          },
+          {
+            "secs": 0,
+            "nanos": 10453
+          },
+          {
+            "secs": 0,
+            "nanos": 20556294
+          },
+          {
+            "secs": 0,
+            "nanos": 182933974
+          },
+          {
+            "secs": 0,
+            "nanos": 234937884
+          },
+          {
+            "secs": 0,
+            "nanos": 5048683
+          },
+          {
+            "secs": 0,
+            "nanos": 294948826
+          },
+          {
+            "secs": 0,
+            "nanos": 78941
+          },
+          {
+            "secs": 0,
+            "nanos": 11494
+          },
+          {
+            "secs": 0,
+            "nanos": 70082748
+          },
+          {
+            "secs": 0,
+            "nanos": 296978783
+          },
+          {
+            "secs": 0,
+            "nanos": 97849
+          },
+          {
+            "secs": 0,
+            "nanos": 18712
+          },
+          {
+            "secs": 0,
+            "nanos": 727861027
+          },
+          {
+            "secs": 0,
+            "nanos": 58720
+          },
+          {
+            "secs": 0,
+            "nanos": 10701
+          },
+          {
+            "secs": 0,
+            "nanos": 70648
+          },
+          {
+            "secs": 0,
+            "nanos": 141
+          },
+          {
+            "secs": 0,
+            "nanos": 173
+          }
+        ],
+        "user_prompt_length": 0,
+        "response_size": 423,
+        "chat_conversation_type": "NotToolUse",
+        "tool_use_ids_and_names": [],
+        "model_id": "claude-sonnet-4",
+        "message_meta_tags": []
+      }
+    }
+  ],
+  "valid_history_range": [
+    0,
+    4
+  ],
+  "transcript": [
+    "> Please check the commit history for this project",
+    "I'll check the commit history for your Amazon Prime Hall of Fame project.\n[Tool uses: execute_bash]",
+    "> t",
+    "Here's the recent commit history for your Amazon Prime Hall of Fame project:\n\n- **4705bfa** - feat: add maskImage onload event handler\n- **01c3d00** - feat: add mask image creation with CORS support to createMask function  \n- **4dddaad** - feat: add canvas and 2D context to createMask function\n- **8388768** - feat: add empty createMask() function to MediaHall class\n- **ff1f6eb** - fix: correct video texture mapping on grid lattice\n- **85a5c6b** - feat: update main.js and gitignore\n- **b7e70c6** - fix: remove AWS CLI zip file from repository\n- **ba0c4d8** - feat: add AWS deployment configuration and update main.js\n- **5616273** - feat: add anisotropy to video texture for improved quality\n- **75e6dd2** - refactor: extract video source URL to top-level variable\n\nThe recent commits show you've been working on mask image functionality, video texture improvements, and AWS deployment setup. Would you like me to show more details about any specific commit or check the full commit history?\n[Tool uses: none]",
+    "> How do I save the chat ?",
+    "\n[Tool uses: introspect]",
+    "You can save the current conversation using the `/save` command:\n\n```\n/save\n```\n\nThis saves the conversation with an auto-generated name, or you can specify a custom name:\n\n```\n/save my-conversation-name\n```\n\nTo load a previously saved conversation later, use:\n\n```\n/load\n```\n\nThis will show you a list of saved conversations to choose from.\n\n**Reference:** https://github.com/aws/amazon-q-developer-cli/blob/main/README.md\n[Tool uses: none]",
+    "> /save aws-config-rules"
+  ],
+  "tools": {
+    "native___": [
+      {
+        "ToolSpecification": {
+          "name": "fs_write",
+          "description": "A tool for creating and editing files\n * The `create` command will override the file at `path` if it already exists as a file, and otherwise create a new file\n * The `append` command will add content to the end of an existing file, automatically adding a newline if the file doesn't end with one. The file must exist.\n Notes for using the `str_replace` command:\n * The `old_str` parameter should match EXACTLY one or more consecutive lines from the original file. Be mindful of whitespaces!\n * If the `old_str` parameter is not unique in the file, the replacement will not be performed. Make sure to include enough context in `old_str` to make it unique\n * The `new_str` parameter should contain the edited lines that should replace the `old_str`.",
+          "input_schema": {
+            "json": {
+              "properties": {
+                "new_str": {
+                  "type": "string",
+                  "description": "Required parameter of `str_replace` command containing the new string. Required parameter of `insert` command containing the string to insert. Required parameter of `append` command containing the content to append to the file."
+                },
+                "command": {
+                  "enum": [
+                    "create",
+                    "str_replace",
+                    "insert",
+                    "append"
+                  ],
+                  "type": "string",
+                  "description": "The commands to run. Allowed options are: `create`, `str_replace`, `insert`, `append`."
+                },
+                "file_text": {
+                  "type": "string",
+                  "description": "Required parameter of `create` command, with the content of the file to be created."
+                },
+                "insert_line": {
+                  "type": "integer",
+                  "description": "Required parameter of `insert` command. The `new_str` will be inserted AFTER the line `insert_line` of `path`."
+                },
+                "path": {
+                  "type": "string",
+                  "description": "Absolute path to file or directory, e.g. `/repo/file.py` or `/repo`."
+                },
+                "summary": {
+                  "description": "A brief explanation of what the file change does or why it's being made.",
+                  "type": "string"
+                },
+                "old_str": {
+                  "description": "Required parameter of `str_replace` command containing the string in `path` to replace.",
+                  "type": "string"
+                }
+              },
+              "type": "object",
+              "required": [
+                "command",
+                "path"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "ToolSpecification": {
+          "name": "fs_read",
+          "description": "Tool for reading files, directories and images. Always provide an 'operations' array.\n\nFor single operation: provide array with one element.\nFor batch operations: provide array with multiple elements.\n\nAvailable modes:\n- Line: Read lines from a file\n- Directory: List directory contents\n- Search: Search for patterns in files\n- Image: Read and process images\n\nExamples:\n1. Single: {\"operations\": [{\"mode\": \"Line\", \"path\": \"/file.txt\"}]}\n2. Batch: {\"operations\": [{\"mode\": \"Line\", \"path\": \"/file1.txt\"}, {\"mode\": \"Search\", \"path\": \"/file2.txt\", \"pattern\": \"test\"}]}",
+          "input_schema": {
+            "json": {
+              "required": [
+                "operations"
+              ],
+              "type": "object",
+              "properties": {
+                "summary": {
+                  "type": "string",
+                  "description": "Optional description of the purpose of this batch operation (mainly useful for multiple operations)"
+                },
+                "operations": {
+                  "items": {
+                    "properties": {
+                      "mode": {
+                        "enum": [
+                          "Line",
+                          "Directory",
+                          "Search",
+                          "Image"
+                        ],
+                        "description": "The operation mode to run in: `Line`, `Directory`, `Search`. `Line` and `Search` are only for text files, and `Directory` is only for directories. `Image` is for image files, in this mode `image_paths` is required.",
+                        "type": "string"
+                      },
+                      "context_lines": {
+                        "type": "integer",
+                        "description": "Number of context lines around search results (optional, for Search mode)",
+                        "default": 2
+                      },
+                      "start_line": {
+                        "type": "integer",
+                        "description": "Starting line number (optional, for Line mode). A negative index represents a line number starting from the end of the file.",
+                        "default": 1
+                      },
+                      "image_paths": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array",
+                        "description": "List of paths to the images. This is currently supported by the Image mode."
+                      },
+                      "path": {
+                        "type": "string",
+                        "description": "Path to the file or directory. The path should be absolute, or otherwise start with ~ for the user's home (required for Line, Directory, Search modes)."
+                      },
+                      "end_line": {
+                        "description": "Ending line number (optional, for Line mode). A negative index represents a line number starting from the end of the file.",
+                        "default": -1,
+                        "type": "integer"
+                      },
+                      "pattern": {
+                        "type": "string",
+                        "description": "Pattern to search for (required, for Search mode). Case insensitive. The pattern matching is performed per line."
+                      },
+                      "depth": {
+                        "type": "integer",
+                        "description": "Depth of a recursive directory listing (optional, for Directory mode)",
+                        "default": 0
+                      }
+                    },
+                    "required": [
+                      "mode"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array",
+                  "description": "Array of operations to execute. Provide one element for single operation, multiple for batch.",
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "ToolSpecification": {
+          "name": "report_issue",
+          "description": "Opens the browser to a pre-filled gh (GitHub) issue template to report chat issues, bugs, or feature requests. Pre-filled information includes the conversation transcript, chat context, and chat request IDs from the service.",
+          "input_schema": {
+            "json": {
+              "required": [
+                "title"
+              ],
+              "properties": {
+                "expected_behavior": {
+                  "description": "Optional: The expected chat behavior or action that did not happen.",
+                  "type": "string"
+                },
+                "steps_to_reproduce": {
+                  "type": "string",
+                  "description": "Optional: Previous user chat requests or steps that were taken that may have resulted in the issue or error response."
+                },
+                "actual_behavior": {
+                  "description": "Optional: The actual chat behavior that happened and demonstrates the issue or lack of a feature.",
+                  "type": "string"
+                },
+                "title": {
+                  "description": "The title of the GitHub issue.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        }
+      },
+      {
+        "ToolSpecification": {
+          "name": "dummy",
+          "description": "This is a dummy tool. If you are seeing this that means the tool associated with this tool call is not in the list of available tools. This could be because a wrong tool name was supplied or the list of tools has changed since the conversation has started. Do not show this when user asks you to list tools.",
+          "input_schema": {
+            "json": {
+              "properties": {},
+              "type": "object",
+              "required": []
+            }
+          }
+        }
+      },
+      {
+        "ToolSpecification": {
+          "name": "use_aws",
+          "description": "Make an AWS CLI api call with the specified service, operation, and parameters. All arguments MUST conform to the AWS CLI specification. Should the output of the invocation indicate a malformed command, invoke help to obtain the the correct command.",
+          "input_schema": {
+            "json": {
+              "type": "object",
+              "required": [
+                "region",
+                "service_name",
+                "operation_name",
+                "label"
+              ],
+              "properties": {
+                "profile_name": {
+                  "type": "string",
+                  "description": "Optional: AWS profile name to use from ~/.aws/credentials. Defaults to default profile if not specified."
+                },
+                "operation_name": {
+                  "type": "string",
+                  "description": "The name of the operation to perform."
+                },
+                "service_name": {
+                  "type": "string",
+                  "description": "The name of the AWS service. If you want to query s3, you should use s3api if possible."
+                },
+                "parameters": {
+                  "type": "object",
+                  "description": "The parameters for the operation. The parameter keys MUST conform to the AWS CLI specification. You should prefer to use JSON Syntax over shorthand syntax wherever possible. For parameters that are booleans, prioritize using flags with no value. Denote these flags with flag names as key and an empty string as their value. You should also prefer kebab case."
+                },
+                "region": {
+                  "type": "string",
+                  "description": "Region name for calling the operation on AWS."
+                },
+                "label": {
+                  "description": "Human readable description of the api that is being called.",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "ToolSpecification": {
+          "name": "execute_bash",
+          "description": "Execute the specified bash command.",
+          "input_schema": {
+            "json": {
+              "type": "object",
+              "properties": {
+                "summary": {
+                  "description": "A brief explanation of what the command does",
+                  "type": "string"
+                },
+                "command": {
+                  "description": "Bash command to execute",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "command"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "ToolSpecification": {
+          "name": "introspect",
+          "description": "ALWAYS use this tool when users ask ANY question about Q CLI itself, its capabilities, features, commands, or functionality. This includes questions like 'Can you...', 'Do you have...', 'How do I...', 'What can you do...', or any question about Q's abilities. When mentioning commands in your response, always prefix them with '/' (e.g., '/save', '/load', '/context'). CRITICAL: Only provide information explicitly documented in Q CLI documentation. If details about any tool, feature, or command are not documented, clearly state the information is not available rather than generating assumptions.",
+          "input_schema": {
+            "json": {
+              "type": "object",
+              "required": [],
+              "properties": {
+                "query": {
+                  "description": "The user's question about Q CLI usage, features, or capabilities",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "context_manager": {
+    "max_context_files_size": 150000,
+    "current_profile": "q_cli_default",
+    "paths": [
+      "AmazonQ.md",
+      "AGENTS.md",
+      "README.md",
+      ".amazonq/rules/**/*.md"
+    ],
+    "hooks": {}
+  },
+  "context_message_length": 1807,
+  "latest_summary": null,
+  "model_info": {
+    "model_name": "claude-sonnet-4",
+    "model_id": "claude-sonnet-4",
+    "context_window_tokens": 200000
+  },
+  "file_line_tracker": {},
+  "mcp_enabled": true
+}
