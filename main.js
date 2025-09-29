@@ -2,15 +2,48 @@ import './styles/style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-// Video source configuration
+// Configuration constants
 const VIDEO_SRC =
   'https://mediahalloffame.s3.eu-north-1.amazonaws.com/Zwanes+Family+North+Ulindi+-+2025+July+16.mp4';
+const MASK_IMAGE_SRC =
+  'https://mediahalloffame.s3.eu-north-1.amazonaws.com/heart.jpg';
+
+// Grid and geometry settings
+const GRID_SIZE = 10;
+const CUBE_SPACING = 0.75;
+const CUBE_SIZE = 0.5;
+
+// Camera settings
+const CAMERA_FOV = 75;
+const CAMERA_NEAR = 0.1;
+const CAMERA_FAR = 100;
+const CAMERA_POSITION_Z = 3;
+
+// Lighting colors and intensities
+const AMBIENT_LIGHT_COLOR = 0x404040;
+const DIRECTIONAL_LIGHT_COLOR = 0xffffff;
+const DIRECTIONAL_LIGHT_INTENSITY = 1;
+const HEMISPHERE_LIGHT_SKY_COLOR = 0x7444ff;
+const HEMISPHERE_LIGHT_GROUND_COLOR = 0xff00bb;
+const HEMISPHERE_LIGHT_INTENSITY = 0.5;
+const POINT_LIGHT_COLOR = 0x7444ff;
+const POINT_LIGHT_INTENSITY = 1;
+const POINT_LIGHT_DISTANCE = 100;
+const POINT_LIGHT_POSITION = { x: 0, y: 3, z: 4 };
+
+// Image processing
+const BRIGHTNESS_THRESHOLD = 128;
+const PIXEL_CHANNELS = 4; // RGBA
+const RGB_CHANNELS = 3;
+
+// Renderer settings
+const MAX_PIXEL_RATIO = 2;
 
 class MediaHall {
   constructor() {
-    this.gridSize = 10;
-    this.spacing = 0.75;
-    this.cubeSize = 0.5;
+    this.gridSize = GRID_SIZE;
+    this.spacing = CUBE_SPACING;
+    this.cubeSize = CUBE_SIZE;
 
     this.initScene();
     this.initCamera();
@@ -33,12 +66,12 @@ class MediaHall {
       height: window.innerHeight,
     };
     this.camera = new THREE.PerspectiveCamera(
-      75,
+      CAMERA_FOV,
       this.sizes.width / this.sizes.height,
-      0.1,
-      100
+      CAMERA_NEAR,
+      CAMERA_FAR
     );
-    this.camera.position.z = 3;
+    this.camera.position.z = CAMERA_POSITION_Z;
     this.scene.add(this.camera);
   }
 
@@ -49,16 +82,33 @@ class MediaHall {
       alpha: true,
     });
     this.renderer.setSize(this.sizes.width, this.sizes.height);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.renderer.setPixelRatio(
+      Math.min(window.devicePixelRatio, MAX_PIXEL_RATIO)
+    );
   }
 
   initLights() {
-    const ambientLight = new THREE.AmbientLight(0x404040);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    const hemisphereLight = new THREE.HemisphereLight(0x7444ff, 0xff00bb, 0.5);
-    const pointLight = new THREE.PointLight(0x7444ff, 1, 100);
+    const ambientLight = new THREE.AmbientLight(AMBIENT_LIGHT_COLOR);
+    const directionalLight = new THREE.DirectionalLight(
+      DIRECTIONAL_LIGHT_COLOR,
+      DIRECTIONAL_LIGHT_INTENSITY
+    );
+    const hemisphereLight = new THREE.HemisphereLight(
+      HEMISPHERE_LIGHT_SKY_COLOR,
+      HEMISPHERE_LIGHT_GROUND_COLOR,
+      HEMISPHERE_LIGHT_INTENSITY
+    );
+    const pointLight = new THREE.PointLight(
+      POINT_LIGHT_COLOR,
+      POINT_LIGHT_INTENSITY,
+      POINT_LIGHT_DISTANCE
+    );
 
-    pointLight.position.set(0, 3, 4);
+    pointLight.position.set(
+      POINT_LIGHT_POSITION.x,
+      POINT_LIGHT_POSITION.y,
+      POINT_LIGHT_POSITION.z
+    );
 
     this.scene.add(ambientLight, directionalLight, hemisphereLight, pointLight);
   }
@@ -78,14 +128,14 @@ class MediaHall {
         // Create individual geometry for each box to have unique UV mapping
         // Calculate UV coordinates for this specific box
         const flippedY = this.gridSize - 1 - y;
-        const pixelIndex = (flippedY * this.gridWidth + x) * 4;
+        const pixelIndex = (flippedY * this.gridWidth + x) * PIXEL_CHANNELS;
         const red = this.data[pixelIndex];
         const green = this.data[pixelIndex + 1];
         const blue = this.data[pixelIndex + 2];
 
-        const brightness = (red + green + blue) / 3;
+        const brightness = (red + green + blue) / RGB_CHANNELS;
 
-        if (brightness < 128) {
+        if (brightness < BRIGHTNESS_THRESHOLD) {
           // Threshold for black vs white
           // Create individual geometry for each box to have unique UV mapping
           // Calculate UV coordinates for this specific box
@@ -155,8 +205,7 @@ class MediaHall {
       this.data = imageData.data;
       this.createGrid();
     };
-    maskImage.src =
-      'https://mediahalloffame.s3.eu-north-1.amazonaws.com/heart.jpg';
+    maskImage.src = MASK_IMAGE_SRC;
   }
 
   createVideoTexture() {
@@ -203,7 +252,9 @@ class MediaHall {
     this.camera.updateProjectionMatrix();
 
     this.renderer.setSize(this.sizes.width, this.sizes.height);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.renderer.setPixelRatio(
+      Math.min(window.devicePixelRatio, MAX_PIXEL_RATIO)
+    );
   }
 
   animate() {
