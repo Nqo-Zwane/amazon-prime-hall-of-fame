@@ -16,7 +16,7 @@ class MediaHall {
     this.initCamera();
     this.initRenderer();
     this.initLights();
-    this.createGrid();
+    this.createMask();
     this.initControls();
     this.addEventListeners();
     this.animate();
@@ -77,33 +77,46 @@ class MediaHall {
 
         // Create individual geometry for each box to have unique UV mapping
         // Calculate UV coordinates for this specific box
-        const uvX = x / this.gridSize;
-        const uvY = (this.gridSize - 1 - y) / this.gridSize; // Flip Y coordinate
-        const uvWidth = 1 / this.gridSize;
-        const uvHeight = 1 / this.gridSize;
+        const flippedY = this.gridSize - 1 - y;
+        const pixelIndex = (flippedY * this.gridWidth + x) * 4;
+        const red = this.data[pixelIndex];
+        const green = this.data[pixelIndex + 1];
+        const blue = this.data[pixelIndex + 2];
 
-        // Get the UV attribute
-        const uvAttribute = geometry.attributes.uv;
-        const uvArray = uvAttribute.array;
+        const brightness = (red + green + blue) / 3;
 
-        // Map each face of the box to show the same portion of video
-        // We'll focus on the front face (face 4) for the main projection
-        for (let i = 0; i < uvArray.length; i += 2) {
-          // Map all faces to the same UV region for consistency
-          uvArray[i] = uvX + uvArray[i] * uvWidth; // U coordinate
-          uvArray[i + 1] = uvY + (1 - uvArray[i + 1]) * uvHeight; // V coordinate
+        if (brightness < 128) {
+          // Threshold for black vs white
+          // Create individual geometry for each box to have unique UV mapping
+          // Calculate UV coordinates for this specific box
+          const uvX = x / this.gridSize;
+          const uvY = y / this.gridSize; // Remove the flip to match correct orientation
+          const uvWidth = 1 / this.gridSize;
+          const uvHeight = 1 / this.gridSize;
+
+          // Get the UV attribute
+          const uvAttribute = geometry.attributes.uv;
+          const uvArray = uvAttribute.array;
+
+          // Map each face of the box to show the same portion of video
+          // We'll focus on the front face (face 4) for the main projection
+          for (let i = 0; i < uvArray.length; i += 2) {
+            // Map all faces to the same UV region for consistency
+            uvArray[i] = uvX + uvArray[i] * uvWidth; // U coordinate
+            uvArray[i + 1] = uvY + uvArray[i + 1] * uvHeight; // V coordinate
+          }
+
+          // Mark the attribute as needing update
+          uvAttribute.needsUpdate = true;
+
+          const mesh = new THREE.Mesh(geometry, this.material);
+
+          mesh.position.x = (x - (this.gridSize - 1) / 2) * this.spacing;
+          mesh.position.y = (y - (this.gridSize - 1) / 2) * this.spacing;
+          mesh.position.z = 0;
+
+          this.group.add(mesh);
         }
-
-        // Mark the attribute as needing update
-        uvAttribute.needsUpdate = true;
-
-        const mesh = new THREE.Mesh(geometry, this.material);
-
-        mesh.position.x = (x - (this.gridSize - 1) / 2) * this.spacing;
-        mesh.position.y = (y - (this.gridSize - 1) / 2) * this.spacing;
-        mesh.position.z = 0;
-
-        this.group.add(mesh);
       }
     }
     this.group.scale.setScalar(this.cubeSize);
@@ -112,7 +125,7 @@ class MediaHall {
 
   createMask() {
     const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d'); // eslint-disable-line no-unused-vars
+    const ctx = canvas.getContext('2d');
     const maskImage = new Image(); // eslint-disable-line no-undef
 
     maskImage.crossOrigin = 'anonymous';
@@ -126,14 +139,24 @@ class MediaHall {
 
       if (aspectRatio > 1) {
         // Image is wider than tall
-        this.gridWidth = this.gridSizeA;
+        this.gridWidth = this.gridSize;
         this.gridHeight = Math.round(this.gridSize / aspectRatio);
       } else {
         // Image is taller than wide or square
         this.gridHeight = this.gridSize;
         this.gridWidth = Math.round(this.gridSize * aspectRatio);
       }
+      canvas.width = this.gridWidth;
+      canvas.height = this.gridHeight;
+      ctx.drawImage(maskImage, 0, 0, this.gridWidth, this.gridHeight);
+
+      const imageData = ctx.getImageData(0, 0, this.gridWidth, this.gridHeight);
+
+      this.data = imageData.data;
+      this.createGrid();
     };
+    maskImage.src =
+      'https://mediahalloffame.s3.eu-north-1.amazonaws.com/heart.jpg';
   }
 
   createVideoTexture() {
