@@ -132,9 +132,9 @@ class MediaHall {
         // Create individual geometry for each box to have unique UV mapping
         // Calculate UV coordinates for this specific box
         // Calculate pixel coordinates with conditional flipping for mask sampling
-        const flippedY = this.videoFlipY ? this.gridSize - 1 - y : y;
+        const maskY = this.videoFlipY ? this.gridSize - 1 - y : y;
         const maskX = this.videoFlipX ? this.gridWidth - 1 - x : x;
-        const pixelIndex = (flippedY * this.gridWidth + maskX) * PIXEL_CHANNELS;
+        const pixelIndex = (maskY * this.gridWidth + maskX) * PIXEL_CHANNELS;
         const red = this.data[pixelIndex];
         const green = this.data[pixelIndex + 1];
         const blue = this.data[pixelIndex + 2];
@@ -228,6 +228,12 @@ class MediaHall {
     this.video.muted = true;
     this.video.play();
 
+    // Create canvas for sampling video colors
+    this.canvas = document.createElement('canvas');
+    this.ctx = this.canvas.getContext('2d');
+    this.canvas.width = 32;
+    this.canvas.height = 32;
+
     // Create video texture
     this.videoTexture = new THREE.VideoTexture(this.video);
     this.videoTexture.minFilter = THREE.LinearMipmapLinearFilter;
@@ -245,6 +251,34 @@ class MediaHall {
       map: this.videoTexture,
       side: THREE.FrontSide,
     });
+
+    // Add event listener for background color updates
+    this.video.addEventListener('timeupdate', () => this.updateBackground());
+  }
+
+  updateBackground() {
+    this.ctx.drawImage(this.video, 0, 0, 32, 32);
+    const imageData = this.ctx.getImageData(0, 0, 32, 32);
+
+    // Get average color
+    let red = 0,
+      green = 0,
+      blue = 0;
+
+    for (let i = 0; i < imageData.data.length; i += 4) {
+      red += imageData.data[i];
+      green += imageData.data[i + 1];
+      blue += imageData.data[i + 2];
+    }
+
+    const pixels = imageData.data.length / 4;
+
+    red = Math.floor(red / pixels);
+    green = Math.floor(green / pixels);
+    blue = Math.floor(blue / pixels);
+
+    // Update Three.js scene background
+    this.scene.background = new THREE.Color(`rgb(${red},${green},${blue})`);
   }
 
   initControls() {
@@ -272,6 +306,12 @@ class MediaHall {
   animate() {
     // Update controls
     this.controls.update();
+
+    if (this.group) {
+      this.group.children.forEach((model, index) => {
+        model.position.z = Math.sin(Date.now() * 0.005 + index * 0.5) * 0.6;
+      });
+    }
 
     // Render
     this.renderer.render(this.scene, this.camera);
