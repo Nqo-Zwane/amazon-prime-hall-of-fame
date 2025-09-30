@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 // Configuration constants
 const VIDEO_SRC =
-  'https://mediahalloffame.s3.eu-north-1.amazonaws.com/Zwanes+Family+North+Ulindi+-+2025+July+16.mp4';
+  'https://mediahalloffame.s3.eu-north-1.amazonaws.com/YouTube_Explosive-Colors.mp4';
 const MASK_IMAGE_SRC =
   'https://mediahalloffame.s3.eu-north-1.amazonaws.com/heart.jpg';
 
@@ -44,6 +44,10 @@ class MediaHall {
     this.gridSize = GRID_SIZE;
     this.spacing = CUBE_SPACING;
     this.cubeSize = CUBE_SIZE;
+
+    // Video orientation flags
+    this.videoFlipY = true; // For video orientation (top-to-bottom vs bottom-to-top)
+    this.videoFlipX = true; // For text content (keep false to maintain readable text)
 
     this.initScene();
     this.initCamera();
@@ -127,8 +131,10 @@ class MediaHall {
 
         // Create individual geometry for each box to have unique UV mapping
         // Calculate UV coordinates for this specific box
-        const flippedY = this.gridSize - 1 - y;
-        const pixelIndex = (flippedY * this.gridWidth + x) * PIXEL_CHANNELS;
+        // Calculate pixel coordinates with conditional flipping for mask sampling
+        const flippedY = this.videoFlipY ? this.gridSize - 1 - y : y;
+        const maskX = this.videoFlipX ? this.gridWidth - 1 - x : x;
+        const pixelIndex = (flippedY * this.gridWidth + maskX) * PIXEL_CHANNELS;
         const red = this.data[pixelIndex];
         const green = this.data[pixelIndex + 1];
         const blue = this.data[pixelIndex + 2];
@@ -138,9 +144,15 @@ class MediaHall {
         if (brightness < BRIGHTNESS_THRESHOLD) {
           // Threshold for black vs white
           // Create individual geometry for each box to have unique UV mapping
-          // Calculate UV coordinates for this specific box
-          const uvX = x / this.gridSize;
-          const uvY = y / this.gridSize; // Remove the flip to match correct orientation
+          // Calculate UV coordinates for this specific box with conditional flipping
+          const uvX = this.videoFlipX
+            ? (this.gridSize - 1 - x) / this.gridSize // Flip X (mirrors content)
+            : x / this.gridSize; // Don't flip X (keeps text readable)
+
+          const uvY = this.videoFlipY
+            ? (this.gridSize - 1 - y) / this.gridSize // Flip Y for video orientation
+            : y / this.gridSize; // Don't flip Y
+
           const uvWidth = 1 / this.gridSize;
           const uvHeight = 1 / this.gridSize;
 
@@ -152,8 +164,8 @@ class MediaHall {
           // We'll focus on the front face (face 4) for the main projection
           for (let i = 0; i < uvArray.length; i += 2) {
             // Map all faces to the same UV region for consistency
-            uvArray[i] = uvX + uvArray[i] * uvWidth; // U coordinate
-            uvArray[i + 1] = uvY + uvArray[i + 1] * uvHeight; // V coordinate
+            uvArray[i] = uvX + (1 - uvArray[i]) * uvWidth; // U coordinate
+            uvArray[i + 1] = uvY + (1 - uvArray[i + 1]) * uvHeight; // V coordinate
           }
 
           // Mark the attribute as needing update
