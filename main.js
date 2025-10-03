@@ -78,7 +78,7 @@ class MediaHall {
         video: MEDIA_CONFIGS[2].video,
       },
     ];
-    this.gridsConfig.forEach((config) => this.createMask(config));
+    this.gridsConfig.forEach((config, index) => this.createMask(config, index));
     this.grids = [];
 
     this.initScene();
@@ -148,9 +148,16 @@ class MediaHall {
     this.scene.add(ambientLight, directionalLight, hemisphereLight, pointLight);
   }
 
-  createGrid(config) {
+  createGrid(config, index) {
     this.createVideoTexture(config);
-    this.group = new THREE.Group();
+    const gridGroup = new THREE.Group();
+
+    if (!this.group) {
+      this.group = new THREE.Group();
+      this.scene.add(this.group);
+    }
+
+    this.group.add(gridGroup);
 
     for (let x = 0; x < this.gridSize; x++) {
       for (let y = 0; y < this.gridSize; y++) {
@@ -208,15 +215,17 @@ class MediaHall {
           mesh.position.y = (y - (this.gridSize - 1) / 2) * this.spacing;
           mesh.position.z = 0;
 
-          this.group.add(mesh);
+          gridGroup.add(mesh);
         }
       }
     }
-    this.group.scale.setScalar(this.cubeSize);
-    this.scene.add(this.group);
+    gridGroup.scale.setScalar(this.cubeSize);
+    gridGroup.name = config.name;
+    this.grids.push(gridGroup);
+    gridGroup.position.z = -5 * index;
   }
 
-  createMask(config) {
+  createMask(config, index) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     const maskImage = new Image(); // eslint-disable-line no-undef
@@ -246,7 +255,7 @@ class MediaHall {
       const imageData = ctx.getImageData(0, 0, this.gridWidth, this.gridHeight);
 
       this.data = imageData.data;
-      this.createGrid(config);
+      this.createGrid(config, index);
     };
     maskImage.src = config.mask;
   }
@@ -284,7 +293,7 @@ class MediaHall {
     });
 
     // Add event listener for background color updates
-    this.video.addEventListener('timeupdate', () => this.updateBackground());
+    //this.video.addEventListener('timeupdate', () => this.updateBackground());
   }
 
   updateBackground() {
@@ -338,11 +347,11 @@ class MediaHall {
     // Update controls
     this.controls.update();
 
-    if (this.group) {
-      this.group.children.forEach((model, index) => {
-        model.position.z = Math.sin(Date.now() * 0.005 + index * 0.5) * 0.6;
-      });
-    }
+    // if (this.group) {
+    //   this.group.children.forEach((model, index) => {
+    //     model.position.z = Math.sin(Date.now() * 0.005 + index * 0.5) * 0.6;
+    //   });
+    // }
 
     // Render
     this.renderer.render(this.scene, this.camera);
