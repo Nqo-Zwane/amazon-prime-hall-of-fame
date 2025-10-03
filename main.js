@@ -3,14 +3,26 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 // Configuration constants
-const VIDEO_SRC =
-  'https://mediahalloffame.s3.eu-north-1.amazonaws.com/YouTube_Explosive-Colors.mp4';
-const MASK_IMAGE_SRC =
-  'https://mediahalloffame.s3.eu-north-1.amazonaws.com/heart.jpg';
+const MEDIA_BASE_URL = 'https://mediahalloffame.s3.eu-north-1.amazonaws.com/';
+
+const MEDIA_CONFIGS = [
+  {
+    video: `${MEDIA_BASE_URL}YouTube_Explosive-Colors.mp4`,
+    mask: `${MEDIA_BASE_URL}heart.jpg`,
+  },
+  {
+    video: `${MEDIA_BASE_URL}Major Lazer – Light it Up (feat. Nyla & Fuse ODG) (Remix) [Official 4K Music Video] - Major Lazer Official (1080p, h264, youtube).mp4`,
+    mask: `${MEDIA_BASE_URL}smile.jpg`,
+  },
+  {
+    video: `${MEDIA_BASE_URL}Motivational.mp4`,
+    mask: `${MEDIA_BASE_URL}codrops.jpg`,
+  },
+];
 
 // Grid and geometry settings
-const GRID_SIZE = 10;
-const CUBE_SPACING = 0.75;
+const GRID_SIZE = 20;
+const CUBE_SPACING = 0.55;
 const CUBE_SIZE = 0.5;
 
 // Camera settings
@@ -49,11 +61,30 @@ class MediaHall {
     this.videoFlipY = true; // For video orientation (top-to-bottom vs bottom-to-top)
     this.videoFlipX = true; // For text content (keep false to maintain readable text)
 
+    this.gridsConfig = [
+      {
+        name: 'heart',
+        mask: MEDIA_CONFIGS[0].mask,
+        video: MEDIA_CONFIGS[0].video,
+      },
+      {
+        name: 'codrops',
+        mask: MEDIA_CONFIGS[1].mask,
+        video: MEDIA_CONFIGS[1].video,
+      },
+      {
+        name: 'smile',
+        mask: MEDIA_CONFIGS[2].mask,
+        video: MEDIA_CONFIGS[2].video,
+      },
+    ];
+    this.gridsConfig.forEach((config) => this.createMask(config));
+    this.grids = [];
+
     this.initScene();
     this.initCamera();
     this.initRenderer();
     this.initLights();
-    this.createMask();
     this.initControls();
     this.addEventListeners();
     this.animate();
@@ -117,8 +148,8 @@ class MediaHall {
     this.scene.add(ambientLight, directionalLight, hemisphereLight, pointLight);
   }
 
-  createGrid() {
-    this.createVideoTexture();
+  createGrid(config) {
+    this.createVideoTexture(config);
     this.group = new THREE.Group();
 
     for (let x = 0; x < this.gridSize; x++) {
@@ -185,7 +216,7 @@ class MediaHall {
     this.scene.add(this.group);
   }
 
-  createMask() {
+  createMask(config) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     const maskImage = new Image(); // eslint-disable-line no-undef
@@ -215,14 +246,14 @@ class MediaHall {
       const imageData = ctx.getImageData(0, 0, this.gridWidth, this.gridHeight);
 
       this.data = imageData.data;
-      this.createGrid();
+      this.createGrid(config);
     };
-    maskImage.src = MASK_IMAGE_SRC;
+    maskImage.src = config.mask;
   }
 
-  createVideoTexture() {
+  createVideoTexture(config) {
     this.video = document.createElement('video');
-    this.video.src = VIDEO_SRC;
+    this.video.src = config.video;
     this.video.crossOrigin = 'anonymous';
     this.video.loop = true;
     this.video.muted = true;
